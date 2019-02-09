@@ -12,6 +12,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  *
@@ -34,7 +35,7 @@ public class servletRegistro extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
-          request.getRequestDispatcher("registro.jsp").forward(request, response);
+          request.getRequestDispatcher("home/registro.jsp").forward(request, response);
         }
     }
 
@@ -50,7 +51,10 @@ public class servletRegistro extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        request.getRequestDispatcher("registro.jsp").forward(request, response);
+        HttpSession httpSession=request.getSession();
+        httpSession.setAttribute("UID", request.getParameter("id"));
+        httpSession.setAttribute("Email", request.getParameter("email"));
+        request.getRequestDispatcher("home/registro.jsp").forward(request, response);
     }
 
     /**
@@ -65,7 +69,6 @@ public class servletRegistro extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         processRequest(request, response);
-        request.getRequestDispatcher("registro.jsp").forward(request, response);
     }
 
     /**

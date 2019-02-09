@@ -6,15 +6,38 @@ body {
   font-size: 12px;
   padding: 0px;
 }
-
+#terminarRegistro{
+    background: none;
+    border: 0;
+    color: inherit;
+    /* cursor: default; */
+    font: inherit;
+    line-height: normal;
+    overflow: visible;
+    padding: 0;
+    -webkit-user-select: none; /* for button */
+    -webkit-appearance: button; /* for input */
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
 .page-content > .row {
   margin-left: 0px !important;
   margin-right: 0px !important;
   margin-top: 30px;
 }
-
+.selectHorarios{
+    margin-left: 10px;
+}
+.check{
+    text-align: center;
+}
 /* Footer */
-
+#map{
+    height: 400px;
+    margin-top: 25px;
+    margin-bottom: 25px;
+    width: 100%;
+}
 footer{
    background-color:#2c3742;
    box-shadow:inset 0px 0px 3px #111;

@@ -47,10 +47,17 @@ public class servletHome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession httpSession=request.getSession();
-        httpSession.setAttribute("Usuario", request.getParameter("user"));
-        httpSession.setAttribute("Email", request.getParameter("email"));
-        httpSession.setAttribute("UID", request.getParameter("id"));
-        request.getRequestDispatcher("home/home.jsp").forward(request, response);
+        String user = request.getParameter("user");
+        String email = request.getParameter("email");
+        String id = request.getParameter("id");
+        httpSession.setAttribute("Usuario", user);
+        httpSession.setAttribute("Email", email);
+        httpSession.setAttribute("UID", id);
+        if(user!=null && email!=null && id != null) {
+            if (!user.isEmpty() && !email.isEmpty() && !id.isEmpty())
+                request.getRequestDispatcher("home/home.jsp").forward(request, response);
+        }else
+        request.getRequestDispatcher("index.jsp").forward(request, response);
     }
 
     /**
@@ -65,7 +72,7 @@ public class servletHome extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession httpSession=request.getSession();
-	httpSession.setAttribute("sessionUsuario", request.getParameter("user"));
+	    httpSession.setAttribute("sessionUsuario", request.getParameter("user"));
         request.getRequestDispatcher("home/home.jsp").forward(request, response);
     }
 

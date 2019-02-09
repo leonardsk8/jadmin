@@ -53,7 +53,7 @@
                                                       </ul>
                                                   </div>
                                                   </div>
-                                                    <h5>Número de creditos</h5><br>
+                                                    <h5>Numero de creditos</h5><br>
                                                     <select id="selectCredits">
                                                         <option value="1">1</option>
                                                         <option value="2">2</option>

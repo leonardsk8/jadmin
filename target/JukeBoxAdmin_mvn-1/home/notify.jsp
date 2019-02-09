@@ -1,8 +1,4 @@
-<%-- 
-    Document   : notify
-    Created on : Jun 25, 2018, 9:50:55 AM
-    Author     : leona
---%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

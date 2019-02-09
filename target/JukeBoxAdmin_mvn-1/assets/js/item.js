@@ -1,5 +1,8 @@
 /* global firebase, YT, fetch */
 
+
+
+var establishmentObject;
 var numeroCancion=0;
 var player;
 var array = [];
@@ -22,15 +25,18 @@ $(document).ready(function() {
             messagingSenderId: "629911785392"
           };
   firebase.initializeApp(config);
+
   iniciar($("#idEstablishment").val());
   iniciarUsuarios($("#idEstablishment").val());
   establishment = $("#idEstablishment").val();
+  getInfoBar(establishment);
   var tag = document.createElement('script');
 
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-      
+
+
 });
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
@@ -75,6 +81,7 @@ $(document).ready(function() {
         console.log("Video STOP");
         
       }
+
  
 function iniciarUsuarios(establishmentId){
     var starCountRef = firebase.database().ref('session/establishment/' + establishmentId + '/users/');
@@ -204,7 +211,7 @@ function recargar(creditos){
     var creditsObj = new Object();
     creditsObj.credits = String(creditos)
     creditsObj.idUser = uidUserSelected;
-    var starCountRef = firebase.database().ref('credits/'+$("#idEstablishment").val()+'/creditos/'+ uidUserSelected ).set(creditsObj)
+    firebase.database().ref('credits/'+$("#idEstablishment").val()+'/creditos/'+ uidUserSelected ).set(creditsObj)
         .then(function(result) {
             alert("Cancelada con exito Se ha devuelto 1 credito");
         }).catch(function (error) {
@@ -227,11 +234,37 @@ function selectUser(uidUser){
         recargar(sum)
     });
 }
-function removeSong(currentlysong,notify,token,nameSong,idUser){
-          selectUser(idUser)
-     firebase.database().ref('reproduction_list/establishment/' + establishment + '/songs/'+currentlysong).remove();
+function setHistorySong(nameSong,state,idVideo,userId) {
+    var mySongHistory = new Object();
+    var f = new Date();
+    var minutes = f.getMinutes()+"";
+    minutes = minutes.length  === 1 ?"0"+f.getMinutes():""+f.getMinutes();
+    var date = f.getHours()+":"+minutes+" "+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+    mySongHistory.idUser = userId;
+    mySongHistory.nameSong = nameSong;
+    mySongHistory.dateSong = date
+    mySongHistory.stateSong = state;
+    mySongHistory.thumnailSong = "https://img.youtube.com/vi/"+idVideo+"/mqdefault.jpg";
+    mySongHistory.nameBar = establishmentObject.name;
+    mySongHistory.videoIdSong = idVideo
+    console.log(userId)
+    firebase.database().ref('history/users/song/' + userId + "/"+idVideo).set(mySongHistory)
+        .then(function(result) {
+            console.log("Exito historial");
+        }).catch(function (error) {
+        console.log("Error historial");
+    });
+}
+function removeSong(idVideo,notify,token,nameSong,idUser){
 
-   /* if(notify === true){
+
+          if(notify === true){
+              selectUser(idUser);
+              setHistorySong(nameSong,"Rechazada",idVideo,idUser);
+          }
+        firebase.database().ref('reproduction_list/establishment/' + establishment + '/songs/'+idVideo).remove();
+        console.log("FINALIZANDO");
+    if(notify === true){
         var key = 'AAAAkqmrD7A:APA91bE12xZ3Vk6wh6-yPHl8J3rKUG7d2fjwu2CN4KJJe-s-DNs2-qOztqrsQTdroihH0AzXerWkfCVzpIpBAHvE9NAwVWa98r6FKZV2mwNc6aLcYcXf-XND0XRaxapnYAzmV0DpQek4';
         var to = token;
         var message ={
@@ -253,7 +286,7 @@ function removeSong(currentlysong,notify,token,nameSong,idUser){
         }).catch(function(error) {
             console.error(error);
         });
-    }*/
+    }
 }
 function updateState(mySong){
     firebase.database().ref('reproduction_list/establishment/' + establishment + '/songs/'+actualSongID).set(mySong);
@@ -300,25 +333,22 @@ function toReproductionList(nameSong,idSong,establishmentId,thumbnail,user,userT
         $("#answer").val("true");
         alert("Exito");
     }).catch(function (error) {
-        alert("Error");
+        alert("Error poniendo canción en lista de reproducción: "+error);
     });
-    if(true){
-        console.log(userId);
-        var mySongHistory = new Object();
-        var f = new Date();
-        var date = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
-        mySongHistory.nameSong = nameSong;
-        mySongHistory.barSong = $("#nameEstablishment").val();
-        mySongHistory.dateSong = date;
-        mySongHistory.urlSong = "https://img.youtube.com/vi/"+idSong+"/mqdefault.jpg";
-     
-            firebase.database().ref('history/users/' + userId + "/song/"+idSong).set(mySongHistory)
-            .then(function(result) {
-               console.log("Exito");
-            }).catch(function (error) {
-               console.log("Error");
-            });
-    }
+    setHistorySong(nameSong,"Aprobada",idSong,userId)
+}
+
+function getInfoBar(establishmentId) {
+    var starCountRef = firebase.database().ref('establishment/bares/' + establishmentId);
+    starCountRef.once('value', function(snapshot) {
+        var establishment = JSON.stringify(snapshot);
+        var obj = JSON.parse(establishment);
+        if(obj != null)
+            establishmentObject = obj
+
+        console.log(establishmentObject)
+
+    });
 }
 
 

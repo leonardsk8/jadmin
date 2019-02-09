@@ -1,8 +1,3 @@
-<%-- 
-    Document   : unvetoed
-    Created on : Jun 25, 2018, 1:14:05 AM
-    Author     : leona
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>

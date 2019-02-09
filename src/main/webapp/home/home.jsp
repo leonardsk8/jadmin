@@ -1,8 +1,4 @@
-<%-- 
-    Document   : home
-    Created on : Jun 7, 2018, 6:19:36 PM
-    Author     : leona
---%>
+
 <!DOCTYPE html>
 <html>
   <head>
@@ -23,7 +19,7 @@
 	           <div class="col-md-5">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><a href="home.html">Jukebox Admin Welcome</a></h1>
+	                 <h1><a href="home.html">Jukebox Admin Bienvenido</a></h1>
 	              </div>
 	           </div>
                    
@@ -33,16 +29,29 @@
 	</div>
 
     <div class="page-content">
+        <div id="registro" class="row">
+            <div class="col-md-12 col-lg-12 col-sm-12 panel-danger">
+                <div class="content-box-header panel-heading">
+                    <div class="panel-title">TU BAR NO APARECERA EN LOS MAPAS HASTA QUE COMPLETES TU REGISTRO
+                        <a href="servletRegistro?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
+                        ;%>&email=<%out.print(String.valueOf(request.getSession().getAttribute("Email")));%>">
+                            CLIC AQUI PARA COMPLETAR REGISTRO</a>
+                    </div>
+                </div>
+            </div>
+        </div>
     	<div class="row">
 		  <div class="col-md-2">
 		  	<div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="home.html"><i class="glyphicon glyphicon-home"></i> INICIO </a></li>
-                    <li><a href="servletReloads?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>" target="_blank"><i class="glyphicon glyphicon-bitcoin"></i> RECARGAS </a></li>
-                    <li><a href=""><i class="glyphicon glyphicon-calendar"></i> PROMOCIONES </a></li>
-                    <li><a href=""><i class="glyphicon glyphicon-stats"></i> PERFIL </a></li>
-                    <li><a href=""><i class="glyphicon glyphicon-list"></i> SALIR </a></li>
+                    <li><a href="servletReloads?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID"
+                    )));%>"
+                           target="_blank"><i class="glyphicon-bitcoin"></i> RECARGAS </a></li>
+                    <li><a href=""><i class="glyphicon-calendar"></i> PROMOCIONES </a></li>
+                    <li><a href=""><i class="glyphicon-stats"></i> PERFIL </a></li>
+                    <li><a href=""><i class="glyphicon-list"></i> SALIR </a></li>
                     
                 </ul>
                             
@@ -56,18 +65,18 @@
 							<div class="panel-title">YOUTUBE</div>
 						</div>
 		  				<div class="content-box-large box-with-header">
-			  			<div id="player"></div>
-                                                <center>
+			  			    <div id="player"></div>
+                                                <div style="text-align: center;">
                                                     <button id="btnPlay" type="button" class="btn btn-info" >PLAY LIST</button>
-                                                </center>
                                                 </div>
+                        </div>
 		  			
-		  		</div>
+		  		        </div>
 
                             <div id="divSongs" class="col-md-6 panel-title">
 		  			
 		  				<div class="content-box-header panel-heading">
-							<div class="panel-title">SONGS</div>
+							<div class="panel-title">Siguientes canciones por sonar</div>
 						</div>
 		  				<div id="listSongs" class="content-box-large box-with-header">
 			  			<ul id="columnsSongs">

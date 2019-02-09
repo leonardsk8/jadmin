@@ -4,6 +4,7 @@ var uidUserSelected="";
  var userNameSelected;
  var arrayUsers = [];
  var establishment;
+ var establishmentObject;
 var arrayUsersVetoed = [];
 var creditosActuales = 0;
  $(document).ready(function() {
@@ -17,6 +18,7 @@ var creditosActuales = 0;
           };
     firebase.initializeApp(config);
     iniciarUsuarios($("#idEstablishment").val());
+    getInfoBar($("#idEstablishment").val())
     establishment = $("#idEstablishment").val();
 });
 $( "#btnReload" ).click(function() {
@@ -26,10 +28,11 @@ $( "#btnReload" ).click(function() {
         recargar(credits);
     else
         alert("Seleccione un usuario");
-}); 
+});
 function recargar(creditos){
     var creditsObj = new Object();
     var sum = parseInt(creditos)+parseInt(creditosActuales);
+    console.log(creditos + " "+creditosActuales )
     creditsObj.credits = String(sum)
     creditsObj.idUser = uidUserSelected;
     var starCountRef = firebase.database().ref('credits/'+$("#idEstablishment").val()+'/creditos/'+ uidUserSelected ).set(creditsObj)
@@ -40,10 +43,17 @@ function recargar(creditos){
     });
     var myLoadHistory = new Object();
         var f = new Date();
-        var date = f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
-        myLoadHistory.creditsLoads = creditos;
-        myLoadHistory.dateLoads = date;
-        myLoadHistory.barLoads = $("#idEstablishment").val();
+        var photo = establishmentObject.images.slice(0, establishmentObject.images.indexOf('~'));
+        var minutes = f.getMinutes()+"";
+        minutes = minutes.length  === 1 ?"0"+f.getMinutes():""+f.getMinutes();
+        var date = f.getHours()+":"+minutes+" "+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
+        var sum = $("#selectCredits").val();
+        myLoadHistory.nameBar = establishmentObject.name;
+        myLoadHistory.date = date;
+        myLoadHistory.idBar = $("#idEstablishment").val();
+        myLoadHistory.credits = sum;
+        myLoadHistory.thumnailBar = photo;
+        myLoadHistory.idUser = uidUserSelected
         var key = Math.floor(Math.random() * (100000000 - 1) + 0);
     
             firebase.database().ref('history/users/load/' + uidUserSelected + "/"+key).set(myLoadHistory)
@@ -54,6 +64,7 @@ function recargar(creditos){
             });
     
 }
+
 function iniciarUsuarios(establishmentId){
     var starCountRef = firebase.database().ref('session/establishment/' + establishmentId + '/users/');
     starCountRef.on('value', function(snapshot) {
@@ -87,12 +98,24 @@ function iniciarUsuarios(establishmentId){
 			});
       });
 }
+ function getInfoBar(establishmentId) {
+     var starCountRef = firebase.database().ref('establishment/bares/' + establishmentId);
+     starCountRef.once('value', function(snapshot) {
+         var establishment = JSON.stringify(snapshot);
+         var obj = JSON.parse(establishment);
+         if(obj != null)
+             establishmentObject = obj
+
+         console.log(establishmentObject)
+
+     });
+ }
 function selectUser(uidUser,userName){
     uidUserSelected = uidUser;
     userNameSelected = userName;
     $("#userSelected").html("ESPERE POR FAVOR");
     var starCountRef = firebase.database().ref('credits/'+$("#idEstablishment").val()+'/creditos/'+ uidUserSelected );
-    starCountRef.on('value', function(snapshot) {
+    starCountRef.once('value', function(snapshot) {
         var users = JSON.stringify(snapshot);
         var obj = JSON.parse(users);
         if(obj != null)

@@ -42,10 +42,10 @@
 						</div>
 		  				<div class="content-box-large box-with-header">
                                                     <center>
-                                                  <input id="idEstablishment" type="hidden" value="<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">      
+                                                  <input id="idEstablishment" type="hidden" value="<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
                                                 <div class="col-md-6 panel-warning">
                                                   <div class="content-box-header panel-heading">
-                                                      <div class="panel-title ">USUARIOS</div><a style="float: right;" onclick="unVetoedUser()">UsuariosVetado</a>
+                                                      <div class="panel-title ">USUARIOS</div><a style="float: right;" onclick="unVetoedUser()">UsuariosVetados</a>
                                                   </div>
                                                   
                                                   <div class="content-box-large box-with-header">
@@ -53,8 +53,10 @@
                                                       </ul>
                                                   </div>
                                                   </div>
-                                                    <h5>Número de creditos</h5><br>
+                                                    <h5>Numero de creditos</h5><br>
                                                     <select id="selectCredits">
+                                                        <option value="1">1</option>
+                                                        <option value="2">2</option>
                                                         <option value="3">3</option>
                                                         <option value="4">4</option>
                                                         <option value="5">5</option>

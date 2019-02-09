@@ -5,8 +5,6 @@
    <html lang="en">
 
     <head>
-
-        <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>JUKEBOX ADMIN</title>
@@ -35,27 +33,27 @@
 
         <div class="tab-content">
             <div id="login">
-                <h1>Welcome Back!</h1>
+                <h1>Bienvenido</h1>
 
                 <form id="form-login" action="/JukeboxAdministrator/servletHome" method="post">
 
                     <div class="field-wrap">
                         <label>
-                            Email Address<span class="req">*</span>
+                            Correo electronico<span class="req">*</span>
                         </label>
                         <input id="form-username" type="email"required autocomplete="off"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
-                            Password<span class="req">*</span>
+                            Contraseña<span class="req">*</span>
                         </label>
                         <input id="form-password" type="password"required autocomplete="off"/>
                     </div>
 
-                    <p class="forgot"><a href="#">Forgot Password?</a></p>
+                    <p class="forgot"><a href="#">¿Olvidaste tu contraseña?</a></p>
 
-                    <button  class="button button-block"/>Log In</button>
+                    <button  class="button button-block"/>Iniciar Sesión</button>
 
                 </form>
 
@@ -63,36 +61,28 @@
             <div id="signup">
                 <h1>Registrate</h1>
 
-                <form action="/" method="post">
+                <form id="formRegister" action="" method="post">
 
-                    <div class="top-row">
-                        <div class="field-wrap">
-                            <label>
-                                Nombre<span class="req">*</span>
-                            </label>
-                            <input type="text" required autocomplete="off" />
-                        </div>
-
-                        <div class="field-wrap">
-                            <label>
-                                Apellido<span class="req">*</span>
-                            </label>
-                            <input type="text"required autocomplete="off"/>
-                        </div>
-                    </div>
 
                     <div class="field-wrap">
                         <label>
                             Correo<span class="req">*</span>
                         </label>
-                        <input type="email"required autocomplete="off"/>
+                        <input id="email-register" type="email"required autocomplete="off"/>
                     </div>
 
                     <div class="field-wrap">
                         <label>
                             Contraseña<span class="req">*</span>
                         </label>
-                        <input type="password"required autocomplete="off"/>
+                        <input id="password-register" type="password"required autocomplete="off"/>
+                    </div>
+
+                    <div class="field-wrap">
+                        <label>
+                            Repetir Contraseña<span class="req">*</span>
+                        </label>
+                        <input id="repassword-register" type="password"required autocomplete="off"/>
                     </div>
 
                     <button type="submit" class="button button-block"/>Registrar</button>
