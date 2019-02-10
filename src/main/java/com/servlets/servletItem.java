@@ -121,7 +121,7 @@ public class servletItem extends HttpServlet {
                      var += ""
                          + "<li id='listHeaderToApproved' draggable='true'>"
                          + "<a class='nameSong' href='https://www.youtube.com/watch?v="+s.getVideo_id()+"' target=\"_blank\">"
-                         + ""+s.getName().substring(0, x).toLowerCase()+"...</a><button type=\"button\" class=\"btn btn-warning btn1A\""
+                         + ""+s.getName().substring(0, x).toLowerCase()+".4..</a><button type=\"button\" class=\"btn btn-warning btn1A\""
                          + "onclick=\"toReproductionList('"+s.getName().replace("\"", "").replace("'","")+"','"+s.getVideo_id()
                          + "','"+ request.getSession().getAttribute("UID") +"','"+s.getThumbnail()+"','"+s.getUser()+"','"+s.getToken()
                          +"','"+s.getUserId()+"',true)\""
@@ -139,7 +139,8 @@ public class servletItem extends HttpServlet {
                          + "<a class='nameSong'>"
                          + ""+s.getSessionUserName()+"<br/>"+s.getSessionUserEmail()+"</a><button type=\"button\" class=\"btn btn-danger btn1A\""
                          + "onclick=\"updateSessionUser('"+s.getSessionDateStart()+"','vetoed',"
-                         + "'"+s.getSessionUserId()+"','"+s.getSessionUserName()+"','"+s.getSessionUserToken()+"','"+s.getSessionUserImage()+"')\""
+                         + "'"+s.getSessionUserId()+"','"+s.getSessionUserName()+"','"+s.getSessionUserToken()+"','"+s.getSessionUserImage()
+                             +"','"+s.getSessionUserEmail()+"')\""
                          + "'>Vetar</button><button type=\"button\" class=\"btn btn-info btn1A\""
                                  + "onclick=\"messageUser('"+request.getSession().getAttribute("UID")+"','"+s.getSessionUserId()+"','"+s.getSessionUserToken()+"')\">Mensaje</button></li>";
                          
@@ -164,7 +165,8 @@ public class servletItem extends HttpServlet {
                          + "<a class='nameSong'>"
                          + ""+s.getSessionUserName()+"</a><button type=\"button\" class=\"btn btn-danger btn1A\""
                          + "onclick=\"updateSessionUser('"+s.getSessionDateStart()+"','active',"
-                         + "'"+s.getSessionUserId()+"','"+s.getSessionUserName()+"','"+s.getSessionUserToken()+"','"+s.getSessionUserImage()+"')\""
+                         + "'"+s.getSessionUserId()+"','"+s.getSessionUserName()+"','"+s.getSessionUserToken()+"'," +
+                             "'"+s.getSessionUserImage()+"','"+s.getSessionUserEmail()+"')\""
                          + "'>Des-Vetar</button></li>";
                          
                  }
@@ -174,7 +176,7 @@ public class servletItem extends HttpServlet {
                  List<SessionVO> listUsersReload = new Gson().fromJson(option, type);
                  for (SessionVO s:listUsersReload) {
                      var +="<li id='listHeaderToApproved' draggable='true'>"
-                         + "<a class='nameSong'>"
+                         + "<a class='nameSong nombres'>"
                          + ""+s.getSessionUserName()+" - "+s.getSessionUserEmail()+"</a><button type=\"button\" class=\"btn btn-info btn1A\""
                                  + "onclick=\"selectUser('"+s.getSessionUserId()+"','"+s.getSessionUserName()+"-"+s.getSessionUserEmail()+"')\">Seleccionar</button></li>";
                          

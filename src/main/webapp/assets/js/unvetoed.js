@@ -29,30 +29,36 @@ function listusers(){
                var user = new Object();
                user.sessionDateStart = obj[i].sessionDateStart;
                user.sessionState = obj[i].sessionState;
+               user.sessionUserEmail = obj[i].sessionUserEmail;
                user.sessionUserId = obj[i].sessionUserId;
                user.sessionUserToken = obj[i].sessionUserToken;
                user.sessionUserName = obj[i].sessionUserName;
                user.sessionUserImage = obj[i].sessionUserImage;
+
                if(user.sessionState === "vetoed")
                    usersVotoed.push(user);
-           } 
+           }
+           console.log(usersVotoed)
            var json = JSON.stringify(usersVotoed);
+        console.log(json)
            $.post('servletItem', {
-		json:json,
+		        json:json,
                 option:5
             }, function(responseText) {
                 $("#columnsUsers").html(responseText);
             });
   });
 }
-function updateSessionUser(sessionDateStart,sessionState,sessionUserId,sessionUserName,sessionUserToken,sessionUserImage){
-      var user = new Object();
+function updateSessionUser(sessionDateStart,sessionState,sessionUserId,sessionUserName,sessionUserToken,sessionUserImage
+    ,sessionUserEmail){
+      var user = {};
       user.sessionDateStart = sessionDateStart;
       user.sessionState = sessionState;
       user.sessionUserId = sessionUserId;
       user.sessionUserName = sessionUserName;
       user.sessionUserImage = sessionUserImage;
       user.sessionUserToken =sessionUserToken;
+    user.sessionUserEmail = sessionUserEmail;
     firebase.database().ref('session/establishment/' + establishment + '/users/'+sessionUserId+'/').set(user)
     .then(function(result) {
         alert("Usuario "+sessionUserName+" desvetado");

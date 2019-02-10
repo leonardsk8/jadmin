@@ -1,5 +1,6 @@
 /* global firebase */
 
+var establishmentObject;
 var map;
 var markers = [];
 var storageService;
@@ -8,6 +9,8 @@ var establishment;
 var numPhotos=0;
 var numPhotosUpload=0;
 var photos = [];
+var latitudInicial = 4.6097102;
+var longitudInicial = -74.081749;
 //dayCheck
 var mondayC = 0;
 var tuesdayC= 0;
@@ -51,6 +54,8 @@ var schedules = "";
 var schedulesHours = "";
 //fin variables
 
+
+
 jQuery(document).ready(function() {
 
     // Initialize Firebase
@@ -67,7 +72,8 @@ jQuery(document).ready(function() {
     storageService = firebase.storage();
     storageRef = storageService.ref();
     establishment = $("#idEstablishment").val();
-    getRating(establishment);
+    $(".popup, .popup-content").addClass("active");
+    getInfoBar(establishment);
     $('.genders').select2();
 
     $(".genders").select2({
@@ -87,8 +93,150 @@ jQuery(document).ready(function() {
     $('#selectSaturdayEnd').prop('disabled', 'disabled');
     $('#selectSundayStart').prop('disabled', 'disabled');
     $('#selectSundayEnd').prop('disabled', 'disabled');
+    var tipo = $("#tipo").val();
+    if(tipo === "registro"){
+        $(".popup, .popup-content").removeClass("active");
+    }
 
 });
+
+function getInfoBar(establishmentId) {
+    var starCountRef = firebase.database().ref('establishment/bares/' + establishmentId);
+    starCountRef.once('value', function(snapshot) {
+        var establishment = JSON.stringify(snapshot);
+        var obj = JSON.parse(establishment);
+        if(obj != null){
+            establishmentObject = obj
+            var tipo = $("#tipo").val();
+            if(tipo === "modificacion"){
+                $("#titleOne").html("<div id=\"titleOne\" class=\"panel-title\">Modificar Perfil</div>");
+                cargarElementos();
+            }
+        }
+        else{
+            $("#tipo").val("registrar");
+            $("#titleOne").html("<div id=\"titleOne\" class=\"panel-title\">Registrar</div>");
+        }
+
+    });
+}
+
+function cargarElementos() {
+    $("#nombreBar").val(establishmentObject.name);
+    $("#descripcionBar").val(establishmentObject.description);
+    var genderArray = establishmentObject.genders.split("-");
+    $("#genders").val(genderArray);
+    $("#direccionBar").val(establishmentObject.address);
+    $("#telefonoBar").val(establishmentObject.phone);
+    var schuHours = establishmentObject.schedulesHours.split("/");
+    var schu = establishmentObject.schedules.split("-");
+    var schuHoursEspecific = [];
+    schu.forEach( function(valor, indice, array) {
+        switch(indice) {
+            case 0:
+                if(valor==="1"){
+                $('#mondayChecked').prop('checked', true);
+                mondayC = 1;
+                schuHoursEspecific = schuHours[0].split("-");
+                    $("#selectMondayStart").val(schuHoursEspecific[0]);
+                    $("#selectMondayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 1:
+                if(valor==="1"){
+                $('#tuesdayChecked').prop('checked', true);
+                tuesdayC = 1;
+                    schuHoursEspecific = schuHours[1].split("-");
+                    $("#selectTuesdayStart").val(schuHoursEspecific[0]);
+                    $("#selectTuesdayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 2:
+                if(valor==="1") {
+                    $('#wednesdayChecked').prop('checked', true);
+                    wednesdayC =1;
+                    schuHoursEspecific = schuHours[2].split("-");
+                    $("#selectWednesdayStart").val(schuHoursEspecific[0]);
+                    $("#selectWednesdayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 3:
+                if(valor==="1") {
+                    $('#thursdayChecked').prop('checked', true);
+                    thursdayC = 1;
+                    schuHoursEspecific = schuHours[3].split("-");
+                    $("#selectThursdayStart").val(schuHoursEspecific[0]);
+                    $("#selectThursdayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 4:
+                if(valor==="1"){
+                $('#fridayChecked').prop('checked', true);
+                fridayC = 1;
+                    schuHoursEspecific = schuHours[4].split("-");
+                    $("#selectFridayStart").val(schuHoursEspecific[0]);
+                    $("#selectFridayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 5:
+                if(valor==="1"){
+                $('#saturdayChecked').prop('checked', true);
+                saturdayC = 1;
+                    schuHoursEspecific = schuHours[5].split("-");
+                    $("#selectSaturdayStart").val(schuHoursEspecific[0]);
+                    $("#selectSaturdayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+            case 6:
+                if(valor==="1"){
+                $('#sundayChecked').prop('checked', true);
+                sundayC = 1;
+                    schuHoursEspecific = schuHours[6].split("-");
+                    $("#selectSundayStart").val(schuHoursEspecific[0]);
+                    $("#selectSundayEnd").val(schuHoursEspecific[1]);
+                }
+                break;
+        }
+
+    });
+    images = establishmentObject.images;
+    latitudInicial = establishmentObject.latitude;
+    longitudInicial = establishmentObject.lenght;
+    latitude = latitudInicial;
+    lenght = longitudInicial;
+    photos = images.split("~");
+    photos.forEach( function(valor, indice, array){
+        switch (indice) {
+            case 0:
+                $('#img1').prop('src', valor);
+                $('#img1').prop('class', "img-thumbnail");
+                break;
+            case 1:
+                $('#img2').prop('src', valor);
+                $('#img2').prop('class', "img-thumbnail");
+                break;
+            case 2:
+                $('#img3').prop('src', valor);
+                $('#img3').prop('class', "img-thumbnail");
+                break;
+            case 3:
+                $('#img4').prop('src', valor);
+                $('#img4').prop('class', "img-thumbnail");
+                break;
+            case 4:
+                $('#img5').prop('src', valor);
+                $('#img5').prop('class', "img-thumbnail");
+                break;
+            case 5:
+                $('#img6').prop('src', valor);
+                $('#img6').prop('class', "img-thumbnail");
+                break;
+        }
+    });
+    var ubicac = {lat: latitudInicial, lng: longitudInicial};
+    addMarker(ubicac);
+    $(".popup, .popup-content").removeClass("active");
+}
 
 function setObject(bar) {
     firebase.database().ref('establishment/bares/' + establishment).set(bar).then(()=>{
@@ -107,11 +255,14 @@ $("#botonGuardar").click(function () {
         alert("Faltan campos por diligenciar");
         return;
     }
+    if($("#tipo").val() === "modificacion")
+        images = "";
     var tamano = photos.length;
     if(tamano === 0){
         alert("Debes subir almenos una foto");
         return;
     }
+
     photos.forEach( function(valor, indice, array) {
         images += valor;
         if(tamano!= indice-1)
@@ -136,38 +287,48 @@ $("#botonGuardar").click(function () {
     if(mondayC === 0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectMondayStart" ).val()+" - "+$( "#selectMondayEnd" ).val()+"/";
+        schedulesHours += $( "#selectMondayStart" ).val()+"-"+$( "#selectMondayEnd" ).val()+"/";
     }
     if(tuesdayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectTuesdayStart" ).val()+" - "+$( "#selectTuesdayEnd" ).val()+"/";
+        schedulesHours += $( "#selectTuesdayStart" ).val()+"-"+$( "#selectTuesdayEnd" ).val()+"/";
     }
     if(wednesdayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectWednesdayStart" ).val()+" - "+$( "#selectWednesdayEnd" ).val()+"/";
+        schedulesHours += $( "#selectWednesdayStart" ).val()+"-"+$( "#selectWednesdayEnd" ).val()+"/";
     }
     if(tuesdayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectThursdayStart" ).val()+" - "+$( "#selectThursdayEnd" ).val()+"/";
+        schedulesHours += $( "#selectThursdayStart" ).val()+"-"+$( "#selectThursdayEnd" ).val()+"/";
     }
     if(fridayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectFridayStart" ).val()+" - "+$( "#selectFridayEnd" ).val()+"/";
+        schedulesHours += $( "#selectFridayStart" ).val()+"-"+$( "#selectFridayEnd" ).val()+"/";
     }
     if(saturdayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectSaturdayStart" ).val()+" - "+$( "#selectSaturdayEnd" ).val()+"/";
+        schedulesHours += $( "#selectSaturdayStart" ).val()+"-"+$( "#selectSaturdayEnd" ).val()+"/";
     }
     if(sundayC ===0){
         schedulesHours += "CERRADO/";
     }else{
-        schedulesHours += $( "#selectSundayStart" ).val()+" - "+$( "#selectSundayEnd" ).val()+"/";
+        schedulesHours += $( "#selectSundayStart" ).val()+"-"+$( "#selectSundayEnd" ).val()+"/";
     }
+    if($("#tipo").val() === "modificar"){
+        if(establishmentObject.raiting == null)
+            raiting = 0;
+        else
+            raiting = establishmentObject.raiting;
+    }
+    else{
+        raiting = 0;
+    }
+
     var bar = {};
     bar.id = id;
     bar.name = name;
@@ -183,21 +344,10 @@ $("#botonGuardar").click(function () {
     bar.raiting = raiting;
     bar.schedulesHours = schedulesHours;
     bar.images = images;
+    bar.requestApproved = true;
     setObject(bar);
 });
 
-
-function getRating(establishmentId) {
-    var starCountRef = firebase.database().ref('establishment/bares/' + establishmentId);
-    starCountRef.once('value', function(snapshot) {
-        var users = JSON.stringify(snapshot);
-        var obj = JSON.parse(users);
-        if(obj != null)
-            raiting = obj.raiting;
-        else
-            raiting = 0;
-    });
-}
 //SCHEDULE
 var updateChecked = function(){
     if($('#mondayChecked').is(":checked")){
@@ -277,19 +427,21 @@ $("#sundayChecked").change(updateChecked);
 
 var map;
 var markers = [];
-
+var firstTime = 0;
 //Map
 function initMap() {
-    var bogota = {lat: 4.6097102, lng: -74.081749};
+    var bogota = {lat: latitudInicial, lng: longitudInicial};
     map = new google.maps.Map(document.getElementById('map'), {
         zoom: 12,
         center: bogota
     });
     // This event listener will call addMarker() when the map is clicked.
     map.addListener('click', function(event) {
+        if(firstTime !== 0){
         addMarker(event.latLng);
         latitude =event.latLng.lat();
         lenght =event.latLng.lng();
+        }firstTime++;
     });
 
     addMarker(bogota);
@@ -351,8 +503,14 @@ function handleFileUploadSubmit(){
     var photo5ext = photo5.name.split(".");
     if(photo6 != null)
     var photo6ext = photo6.name.split(".");
-
+    photos=[];
     if(photo1 != null){
+        document.getElementById("result1").innerHTML = "<h5>CARGANDO FOTOS POR FAVOR ESPERE </h5>";
+        document.getElementById("result2").innerHTML = "";
+        document.getElementById("result3").innerHTML = "";
+        document.getElementById("result4").innerHTML = "";
+        document.getElementById("result5").innerHTML = "";
+        document.getElementById("result6").innerHTML = "";
         numPhotos++;
         const uploadTask = storageRef.child(`imagesBar/${establishment}/1.${photo1ext}`).put(photo1); //create a child directory called images, and place the file inside this directory
         uploadTask
@@ -360,8 +518,11 @@ function handleFileUploadSubmit(){
                 snapshot.ref.getDownloadURL()).then((url) =>
                 {
                     document.getElementById("result1").innerHTML = "<h5>Foto 1 cargada con exito </h5>";
-                numPhotosUpload++;
+                    numPhotosUpload++;
                     photos.push(url);
+                    $('#img1').prop('src', url);
+                    $('#img1').prop('class', "img-thumbnail");
+
             })
             .catch(console.error);
     }
@@ -375,6 +536,9 @@ function handleFileUploadSubmit(){
             document.getElementById("result2").innerHTML = "<h5>Foto 2 cargada con exito </h5>";
             numPhotosUpload++;
             photos.push(url);
+            $('#img2').prop('src', url);
+            $('#img2').prop('class', "img-thumbnail");
+
         })
             .catch(console.error);
     }
@@ -388,6 +552,8 @@ function handleFileUploadSubmit(){
             numPhotosUpload++;
             photos.push(url);
             document.getElementById("result3").innerHTML = "<h5>Foto 3 cargada con exito </h5>";
+            $('#img3').prop('src', url);
+            $('#img3').prop('class', "img-thumbnail");
         })
             .catch(console.error);
     }
@@ -401,6 +567,8 @@ function handleFileUploadSubmit(){
             numPhotosUpload++;
             photos.push(url);
             document.getElementById("result4").innerHTML = "<h5>Foto 4 cargada con exito </h5>";
+            $('#img4').prop('src', url);
+            $('#img4').prop('class', "img-thumbnail");
         })
             .catch(console.error);
     }
@@ -414,6 +582,8 @@ function handleFileUploadSubmit(){
             document.getElementById("result5").innerHTML = "<h5>Foto 5 cargada con exito </h5>";
             numPhotosUpload++;
             photos.push(url);
+            $('#img5').prop('src', url);
+            $('#img5').prop('class', "img-thumbnail");
         })
             .catch(console.error);
     }
@@ -427,10 +597,64 @@ function handleFileUploadSubmit(){
         document.getElementById("result6").innerHTML = "<h5>Foto 6 cargada con exito </h5>";
         numPhotosUpload++;
         photos.push(url);
+        $('#img6').prop('src', url);
+        $('#img6').prop('class', "img-thumbnail");
     })
         .catch(console.error);
     }
+
 }
+function deletePhoto(thisSrc){
+    var arrayImg = photos;
+    for (i = 0; i < photos.length; i++){
+        var valor = photos[i];
+        if(valor === thisSrc){
+            photos = arrayImg.slice(i);
+            break;
+        }
+    }
+}
+$('#img1').click(function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img1").removeAttr("src");
+    jQuery("#img1").removeAttr("class");
+
+});
+$('#img2').click(function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img2").removeAttr("src");
+    jQuery("#img2").removeAttr("class");
+
+});
+$('#img3').click( function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img3").removeAttr("src");
+    jQuery("#img3").removeAttr("class");
+
+});
+$('#img4').click( function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img4").removeAttr("src");
+    jQuery("#img4").removeAttr("class");
+
+});
+$('#img5').click(function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img5").removeAttr("src");
+    jQuery("#img5").removeAttr("class");
+
+});
+$('#img6').click(function(){
+    var thisSrc = $(this).attr('src');
+    deletePhoto(thisSrc);
+    jQuery("#img6").removeAttr("src");
+    jQuery("#img6").removeAttr("class");
+});
 
 
 

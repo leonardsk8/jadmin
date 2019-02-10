@@ -15,6 +15,7 @@ var Approved = [];
 var arrayUsers = [];
 var arrayUsersVetoed = [];
 var uidUserSelected="";
+var aprobacion = true;
 $(document).ready(function() {
   var config = {
             apiKey: "AIzaSyD7-bVTa9iV2NNrlFqWqUMk-VQx9H4LnFs",
@@ -35,6 +36,11 @@ $(document).ready(function() {
       tag.src = "https://www.youtube.com/iframe_api";
       var firstScriptTag = document.getElementsByTagName('script')[0];
       firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+    $('#aprobacion').bootstrapToggle({
+            on: 'SI',
+            off: 'NO'
+        });
 
 
 });
@@ -117,7 +123,12 @@ function iniciarUsuarios(establishmentId){
 			});
       });
 }
-
+$(function() {
+    $('#aprobacion').change(function() {
+        aprobacion = $(this).prop('checked');
+        updateAprobacion(aprobacion);
+    })
+})
 function updateSessionUser(sessionDateStart,sessionState,sessionUserId,sessionUserName,sessionUserToken,sessionUserImage
 ,sessionUserEmail){
       var user = new Object();
@@ -144,13 +155,15 @@ function unVetoedUser(){
     window.open("/JukeboxAdministrator/servletUnVetoed?id="+establishment,"JUKEBOX USERS VETOED",opciones);
 }
 function iniciar(establishmentId){
+
      var starCountRef = firebase.database().ref('reproduction_list/establishment/' + establishmentId + '/songs');
         starCountRef.on('value', function(snapshot) {
+            //getNumSong();
             var songs = JSON.stringify(snapshot);
             var obj = JSON.parse(songs);
             var numSongs=0;     
             array = [];
-            Approved = [];
+            Approved = [];1
             for (let i in obj) {
                 var mySong = new Object();
                 mySong.name = obj[i].name;
@@ -168,24 +181,26 @@ function iniciar(establishmentId){
                 else
                 Approved.push(mySong);
                 numSongs++;
+
             }
-            console.log(Approved);
             var json = JSON.stringify(array);
-            console.log(json)
 			$.post('servletItem', {
 				json:json,
                                 option:1
 			}, function(responseText) {
 				$("#columnsSongs").html(responseText);
+				if(array.length===1 || actualSongID === undefined)
+                    $('#btnNext').prop('disabled', true);
+				else
+                    $('#btnNext').prop('disabled', false);
 			});
-            var toBeApproved = JSON.stringify(Approved); 
+            var toBeApproved = JSON.stringify(Approved);
             $.post('servletItem', {
 				json:toBeApproved,
-                                option:2
+                option:2
 			}, function(responseText) {
 				$("#columnsSongsToApproved").html(responseText);
 			});
-            
             
             $.get('servletItem', {
                 json:JSON.stringify(array),
@@ -195,7 +210,7 @@ function iniciar(establishmentId){
               array = JSON.parse(responseText);
               auxArray = array;
             });            
-            getNumSong();
+
         });
 }
 function getNumSong(){
@@ -204,6 +219,7 @@ function getNumSong(){
         option:1
 	}, function(responseText) {
            numeroCancion=responseText;
+
 	});
         
 }
@@ -230,7 +246,6 @@ function selectUser(uidUser){
         else
             creditosActuales = 0
         var sum = parseInt(1)+parseInt(creditosActuales);
-        console.log(sum);
         recargar(sum)
     });
 }
@@ -241,13 +256,13 @@ function setHistorySong(nameSong,state,idVideo,userId) {
     minutes = minutes.length  === 1 ?"0"+f.getMinutes():""+f.getMinutes();
     var date = f.getHours()+":"+minutes+" "+f.getDate() + "/" + (f.getMonth() +1) + "/" + f.getFullYear();
     mySongHistory.idUser = userId;
+    mySongHistory.idBar = $("#idEstablishment").val();
     mySongHistory.nameSong = nameSong;
     mySongHistory.dateSong = date
     mySongHistory.stateSong = state;
     mySongHistory.thumnailSong = "https://img.youtube.com/vi/"+idVideo+"/mqdefault.jpg";
     mySongHistory.nameBar = establishmentObject.name;
-    mySongHistory.videoIdSong = idVideo
-    console.log(userId)
+    mySongHistory.videoIdSong = idVideo;
     firebase.database().ref('history/users/song/' + userId + "/"+idVideo).set(mySongHistory)
         .then(function(result) {
             console.log("Exito historial");
@@ -294,7 +309,7 @@ function updateState(mySong){
 function playVideo() {
     var songToPlay = "";
     var mySong;
-    mySong = new Object();
+    mySong = {};
     mySong.name = auxArray[indice].name;
     mySong.video_id = auxArray[indice].video_id;
     mySong.approved = auxArray[indice].approved;
@@ -303,7 +318,6 @@ function playVideo() {
     mySong.user = auxArray[indice].user;
     mySong.reproducing = true;
     mySong.likes = auxArray[indice].likes;
-    console.log(mySong.name+" "+ mySong.video_id);
     actualSongID = mySong.video_id;
     songToPlay = mySong.video_id;
     updateState(mySong);
@@ -316,8 +330,24 @@ $("#btnPlay").click(function () {
     else
     playVideo();
 });
+$("#btnNext").click(function () {
+    indice = 0;
+    if( array.length===0 )
+        alert("nada que reproducir");
+    else{
+        if(array.length === 1 || actualSongID ===undefined){
+            indice=0;
+        }
+        if(actualSongID !== undefined)
+        removeSong(actualSongID,false,"");
+        indice = 1;
+        playVideo();
+    }
+
+});
 function toReproductionList(nameSong,idSong,establishmentId,thumbnail,user,userToken,userId,history){
-    var mySong = new Object();
+    var mySong = {};
+    numeroCancion = parseInt(array.length)+parseInt(1);
     mySong.name = nameSong;
     mySong.video_id = idSong;
     mySong.approved = true;
@@ -325,16 +355,17 @@ function toReproductionList(nameSong,idSong,establishmentId,thumbnail,user,userT
     mySong.thumbnail = thumbnail;
     mySong.user = user;
     mySong.reproducing = false;
-    mySong.likes = 0;
+    mySong.likes = 1;
     mySong.userToken = userToken;
     array.push(mySong);
     firebase.database().ref('reproduction_list/establishment/' + establishmentId + '/songs/' + idSong).set(mySong)
     .then(function(result) {
         $("#answer").val("true");
-        alert("Exito");
+        //alert("Exito");
     }).catch(function (error) {
         alert("Error poniendo canción en lista de reproducción: "+error);
     });
+    if(userId!=="")
     setHistorySong(nameSong,"Aprobada",idSong,userId)
 }
 
@@ -345,89 +376,17 @@ function getInfoBar(establishmentId) {
         var obj = JSON.parse(establishment);
         if(obj != null)
             establishmentObject = obj
-
-        console.log(establishmentObject)
-
+        if(establishmentObject.requestApproved === undefined ||establishmentObject.requestApproved === false)
+            $('#aprobacion').bootstrapToggle('off')
+        else
+            $('#aprobacion').bootstrapToggle('on')
     });
 }
-
-
-
-//list drag and drop
-
-//var dragSrcEl = null;
-//
-//function handleDragStart(e) {
-//  // Target (this) element is the source node.
-//  dragSrcEl = this;
-//
-//  e.dataTransfer.effectAllowed = 'move';
-//  e.dataTransfer.setData('text/html', this.outerHTML);
-//
-//  this.classList.add('dragElem');
-//}
-//function handleDragOver(e) {
-//  if (e.preventDefault) {
-//    e.preventDefault(); // Necessary. Allows us to drop.
-//  }
-//  this.classList.add('over');
-//
-//  e.dataTransfer.dropEffect = 'move';  // See the section on the DataTransfer object.
-//
-//  return false;
-//}
-//
-//function handleDragEnter(e) {
-//  // this / e.target is the current hover target.
-//}
-//
-//function handleDragLeave(e) {
-//  this.classList.remove('over');  // this / e.target is previous target element.
-//}
-//
-//function handleDrop(e) {
-//  // this/e.target is current target element.
-//
-//  if (e.stopPropagation) {
-//    e.stopPropagation(); // Stops some browsers from redirecting.
-//  }
-//
-//  // Don't do anything if dropping the same column we're dragging.
-//  if (dragSrcEl != this) {
-//    // Set the source column's HTML to the HTML of the column we dropped on.
-//    //alert(this.outerHTML);
-//    //dragSrcEl.innerHTML = this.innerHTML;
-//    //this.innerHTML = e.dataTransfer.getData('text/html');
-//    this.parentNode.removeChild(dragSrcEl);
-//    var dropHTML = e.dataTransfer.getData('text/html');
-//    this.insertAdjacentHTML('beforebegin',dropHTML);
-//    var dropElem = this.previousSibling;
-//    addDnDHandlers(dropElem);
-//    
-//  }
-//  this.classList.remove('over');
-//  return false;
-//}
-//
-//function handleDragEnd(e) {
-//  // this/e.target is the source node.
-//  this.classList.remove('over');
-//
-//  /*[].forEach.call(cols, function (col) {
-//    col.classList.remove('over');
-//  });*/
-//}
-//
-//function addDnDHandlers(elem) {
-//  elem.addEventListener('dragstart', handleDragStart, false);
-//  elem.addEventListener('dragenter', handleDragEnter, false)
-//  elem.addEventListener('dragover', handleDragOver, false);
-//  elem.addEventListener('dragleave', handleDragLeave, false);
-//  elem.addEventListener('drop', handleDrop, false);
-//  elem.addEventListener('dragend', handleDragEnd, false);
-//
-//}
-//
-//var cols = document.querySelectorAll('#columns .column');
-//[].forEach.call(cols, addDnDHandlers);
-//
+function updateAprobacion(flag) {
+    firebase.database().ref('establishment/bares/' + establishmentObject.id+ "/requestApproved").set(flag)
+        .then(function(result) {
+            console.log("Función aprobación actualizada")
+        }).catch(function (error) {
+        console.log("Error historial");
+    });
+}

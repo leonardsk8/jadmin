@@ -1,11 +1,4 @@
-<%-- 
-    Document   : Registro
-    Created on : 20/10/2018, 02:24:50 PM
-    Author     : User1
---%>
-
-
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
@@ -18,7 +11,8 @@
         <link href="/JukeboxAdministrator/assets/css/select2.css    " rel="stylesheet">
     <link href="/JukeboxAdministrator/assets/css/styles.css" rel="stylesheet">
         <%--<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />--%>
-        <link href="/JukeboxAdministrator/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+        <%--<link href="/JukeboxAdministrator/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
+        <link href="/JukeboxAdministrator/assets/css/bootstrap.css" rel="stylesheet">
 
     
        <!-- CSS -->
@@ -33,7 +27,9 @@
 	           <div class="col-md-5">
 	              <!-- Logo -->
 	              <div class="logo">
-	                 <h1><a href="home.html">JukeBox Hero</a></h1>
+	                 <h1><a href="servletHome?user=null&email=<%out.print(String.valueOf(request
+	                 .getSession().getAttribute("Email")));%>&id=<%out.print(String.valueOf(request.getSession()
+	                 .getAttribute("UID")));%>">JukeBox Hero</a></h1>
 	              </div>
 	           </div>
                    
@@ -49,12 +45,14 @@
     <div class="page-content">
         <input id="idEstablishment" type="hidden" value=
                 "<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
+        <input id="tipo" type="hidden" value=
+                "<%out.print(String.valueOf(request.getSession().getAttribute("Tipo")));%>">
     	<div class="row">
 		  <div class="col-md-12">
 		  	<div class="col-md-12 panel-danger">
 		  			
 		  				<div class="content-box-header panel-heading">
-							<div class="panel-title">Completar Registro</div>
+							<div id="titleOne" class="panel-title">Completar Registro</div>
                                                 </div>      
                             </div>
               <div class="content-box-large box-with-header">
@@ -64,8 +62,8 @@
                           <input type="text" id="nombreBar" required/>
                       </div>
                           <div class="col-md-4 col-lg-4 col-sm-12">
-                              <h4>Descripción de tu bar</h4>
-                              <textarea id="descripcionBar" required/>Ingresa aquí el texto</textarea>
+                              <h4>DescripciÃ³n de tu bar</h4>
+                              <textarea id="descripcionBar" required/>Ingresa aquÃ­ el texto</textarea>
                           </div>
                           <div class="col-md-4 col-lg-4 col-sm-12">
                               <h4>Principales generos de tu bar</h4>
@@ -75,7 +73,7 @@
                                   <option value="Country">Country</option>
                                   <option value="Cumbia">Cumbia</option>
                                   <option value="Disco">Disco</option>
-                                  <option value="Electrónica">Electrónica</option>
+                                  <option value="Electrï¿½nica">Electrï¿½nica</option>
                                   <option value="Flamenco">Flamenco</option>
                                   <option value="Folk">Folk</option>
                                   <option value="Funk">Funk</option>
@@ -105,11 +103,11 @@
                   </div>
                   <div class="row">
                       <div class="col-md-4 col-lg-4 col-sm-12">
-                          <h4>Dirección del bar</h4>
+                          <h4>DirecciÃ³n del bar</h4>
                           <input type="text" id="direccionBar" required />
                       </div>
                       <div class="col-md-4 col-lg-4 col-sm-12">
-                          <h4>Teléfono</h4>
+                          <h4>TelÃ©fono</h4>
                           <input type="number" id="telefonoBar" required/>
                       </div>
                       <div class="col-md-4 col-lg-4 col-sm-12">
@@ -119,12 +117,12 @@
                       </div>
                   </div>
                   <br/>
+                  <h3>Horarios en que atiendes</h3>
                   <div class="row">
-                      <h3>Horarios en que atiendes</h3>
-                      <div class="col-md-6 col-lg-6 col-sm-12">
+                      <div class="col-md-4 col-lg-4 col-sm-12">
                           <table>
                               <tr>
-                                  <th>Días</th>
+                                  <th>DÃ­as</th>
                                   <th>Abierto</th>
                                   <th style="text-align: center">Apertura</th>
                                   <th>Cierre</th>
@@ -454,7 +452,7 @@
                           <br/>
                           </table>
                       </div>
-                      <div class="col-md-6 col-lg-6 col-sm-12">
+                      <div class="col-md-4 col-lg-4 col-sm-12">
                           <h3>Selecciona las fotos de tu bar</h3>
                           <div id="filesubmit">
                               <input type="file" class="file-select1" accept="image/*" multiple max="6"/><button class="file-submit">Subir</button>
@@ -489,11 +487,65 @@
 
 
                           </div>
+                          <div class="popup-overlay">
+                              <!--Creates the popup content-->
+                              <div id="divCargando" class="popup-content">
+                                  <h2>CARGANDO</h2>
+                                  <p> CARGANDO POR FAVOR ESPERE</p>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-md-4 col-lg-4 col-sm-12">
+                          <h3>Clic en la imagen para eliminar</h3>
+                          <div class="container">
+                              <div class="row">
+                                  <div class="row">
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto1" class="thumbnail" data-image-id="" data-toggle="modal" data-title=""
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img1">
+                                      </div>
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto2" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img2">
+                                      </div>
+
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto3" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title=""
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img3">
+                                      </div>
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto4" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Test1"
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img4">
+                                      </div>
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto5" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img5">
+                                      </div>
+                                      <div class="col-lg-4 col-md-4 col-xs-6 thumb">
+                                          <a id="thumbnailPhoto6" class="thumbnail" href="#" data-image-id="" data-toggle="modal" data-title="Im so nice"
+                                             data-target="#image-gallery">
+                                          </a>
+                                          <img id="img6">
+                                      </div>
+
+                                  </div>
+                              </div>
+                          </div>
                       </div>
                   </div>
                   <div class="row">
                     <div class="col-lg-12" style="text-align: center;">
-                        <h3>Selecciona la ubicación de tu bar</h3>
+                        <h3>Selecciona la ubicaciÃ³n de tu bar</h3>
                       <div id="map">
 
                       </div>
@@ -515,6 +567,7 @@
         <script src="/JukeboxAdministrator/assets/js/select2.js"></script>
         <%--<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>--%>
         <script src="/JukeboxAdministrator/assets/js/registro.js"></script>
+        <script src="/JukeboxAdministrator/assets/js/bootstrap.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA78DDXRBSSKiKs7elTIyWdwS7B-N5O9FQ&callback=initMap"
                 async defer></script>

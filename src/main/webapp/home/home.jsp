@@ -1,4 +1,4 @@
-
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
   <head>
@@ -7,8 +7,10 @@
 	<meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <link href="/JukeboxAdministrator/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <%--<link href="/JukeboxAdministrator/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
+    <link href="/JukeboxAdministrator/assets/css/bootstrap.css" rel="stylesheet">
     <!-- styles -->
+      <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
     <link href="/JukeboxAdministrator/assets/css/styles.css" rel="stylesheet">
 
   </head>
@@ -34,7 +36,8 @@
                 <div class="content-box-header panel-heading">
                     <div class="panel-title">TU BAR NO APARECERA EN LOS MAPAS HASTA QUE COMPLETES TU REGISTRO
                         <a href="servletRegistro?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
-                        ;%>&email=<%out.print(String.valueOf(request.getSession().getAttribute("Email")));%>">
+                        ;%>&email=<%out.print(String.valueOf(request.getSession().getAttribute("Email")));
+                        %>&tipo=registro">
                             CLIC AQUI PARA COMPLETAR REGISTRO</a>
                     </div>
                 </div>
@@ -50,9 +53,12 @@
                     )));%>"
                            target="_blank"><i class="glyphicon-bitcoin"></i> RECARGAS </a></li>
                     <li><a href=""><i class="glyphicon-calendar"></i> PROMOCIONES </a></li>
-                    <li><a href=""><i class="glyphicon-stats"></i> PERFIL </a></li>
+                    <li><a href="servletRegistro?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
+                        ;%>&email=<%out.print(String.valueOf(request.getSession().getAttribute("Email")));
+                        %>&tipo=modificacion"><i class="glyphicon-stats"></i> EDITAR PERFIL </a></li>
+                    <li><a href=""><i class="glyphicon-list"></i> EDITAR MENÚ </a></li>
                     <li><a href=""><i class="glyphicon-list"></i> SALIR </a></li>
-                    
+
                 </ul>
                             
              </div>
@@ -67,7 +73,8 @@
 		  				<div class="content-box-large box-with-header">
 			  			    <div id="player"></div>
                                                 <div style="text-align: center;">
-                                                    <button id="btnPlay" type="button" class="btn btn-info" >PLAY LIST</button>
+                                                    <button id="btnPlay" type="button" class="btn btn-info" >Reproducir Lista</button>
+                                                    <button id="btnNext" type="button" class="btn btn-info" >Siguiente Canción</button>
                                                 </div>
                         </div>
 		  			
@@ -102,8 +109,17 @@
 					</div>
 		  		</div>
                                 <div class="col-md-6 panel-warning">
-		  			<div class="content-box-header panel-heading">
+		  			<div id="listaAprobar" class="content-box-header panel-heading">
 	  					<div class="panel-title">CANCIONES POR APROBAR</div>
+                        <div style="float: right">
+                            <div class="checkbox">
+                                <label class="checkbox-inline">
+                                    <input id="aprobacion" type="checkbox" data-toggle="toggle">
+                                    Aprobación
+                                </label>
+                            </div>
+
+                        </div>
 		  			</div>
 		  			<div class="content-box-large box-with-header">
                                             <p id="columnsSongsToApproved" class="noList">
@@ -115,7 +131,7 @@
                       <div class="row">
                           <div class="col-md-12 panel-warning">
 		  			<div class="content-box-header panel-heading">
-	  					<div class="panel-title ">BUSCAR</div>
+	  					<div class="panel-title ">BUSCAR EN YOUTUBE</div>
 		  			</div>
 		  			<div class="content-box-large box-with-header">
 			  			<form action="#">
@@ -145,8 +161,9 @@
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="/JukeboxAdministrator/assets/js/jquery-1.11.1.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="/JukeboxAdministrator/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/JukeboxAdministrator/assets/js/bootstrap.js"></script>
 <!--    <script src="../assets/js/auth.js"></script>-->
+    <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>
     <script src="/JukeboxAdministrator/assets/js/app.js"></script>
     <script src="/JukeboxAdministrator/assets/js/item.js"></script>
     <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>

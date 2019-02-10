@@ -1,16 +1,18 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <!DOCTYPE HTML>
 <html>
    <head>
 <!-- Scripts jQuery, bootstrap -->
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" crossorigin="anonymous"></script>
        
        <!-- Estilos  bootstrap, chat-->
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
 <link rel="stylesheet" href="/JukeboxAdministrator/assets/css/css.css" >
 
-      <!-- área de código Firebase y lectura de Mensajes-->
+       <link href="/JukeboxAdministrator/assets/css/bootstrap.css" rel="stylesheet">
+
+      <!-- ï¿½rea de cï¿½digo Firebase y lectura de Mensajes-->
        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
 <script>
  
@@ -102,8 +104,9 @@
         </li>
        
        
-    <!-- Scripts de acción al botón -->
- 
+    <!-- Scripts de acciï¿½n al botï¿½n -->
+
+
      <script src="/JukeboxAdministrator/assets/js/chat.js"></script>
    </body>
 </html>

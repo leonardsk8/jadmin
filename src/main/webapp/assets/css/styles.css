@@ -6,6 +6,40 @@ body {
   font-size: 12px;
   padding: 0px;
 }
+
+.buscador{
+    margin:0 auto;
+    width:370px;
+    line-height:2;
+}
+#buscador{
+    width: 100%;
+    font-size: 20px;
+}
+.popup-overlay {
+    visibility:hidden;
+}
+
+.popup-content {
+    visibility:hidden;
+}
+.popup-overlay.active{
+    visibility:visible;
+}
+
+.popup-content.active {
+    visibility:visible;
+}
+#divCargando {
+    display:block;
+    width:600px;
+    height:400px;
+    position:absolute;
+    top:50%;
+    left:50%;
+    margin-top:-200px;
+    margin-left:-300px;
+}
 #terminarRegistro{
     background: none;
     border: 0;
@@ -259,7 +293,9 @@ footer .copy{
   border-top-left-radius:0px;
   border-top-right-radius:0px;
 }
-
+#listaAprobar{
+    min-height: 60px !important;
+}
 .content-box-header {
   min-height: 40px;
    font-size: 16px;

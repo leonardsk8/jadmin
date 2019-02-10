@@ -54,6 +54,7 @@ public class servletRegistro extends HttpServlet {
         HttpSession httpSession=request.getSession();
         httpSession.setAttribute("UID", request.getParameter("id"));
         httpSession.setAttribute("Email", request.getParameter("email"));
+        httpSession.setAttribute("Tipo", request.getParameter("tipo"));
         request.getRequestDispatcher("home/registro.jsp").forward(request, response);
     }
 

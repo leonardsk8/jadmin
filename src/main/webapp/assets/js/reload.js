@@ -130,4 +130,19 @@ function unVetoedUser(){
      var opciones="toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=no,resizable=yes,width=420,height=500,top=85,left=140";
     window.open("/JukeboxAdministrator/servletUnVetoed?id="+establishment,"JUKEBOX USERS VETOED",opciones);
 }
+ $('#buscador').keyup(function(){
+     var nombres = $('.nombres');
+     var buscando = $(this).val();
+     var item='';
+     for( var i = 0; i < nombres.length; i++ ){
+         item = $(nombres[i]).html().toLowerCase();
+         for(var x = 0; x < item.length; x++ ){
+             if( buscando.length == 0 || item.indexOf( buscando ) > -1 ){
+                 $(nombres[i]).parents('#listHeaderToApproved').show();
+             }else{
+                 $(nombres[i]).parents('#listHeaderToApproved').hide();
+             }
+         }
+     }
+ });
         
