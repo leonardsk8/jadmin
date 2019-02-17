@@ -5,19 +5,21 @@
  */
 package com.servlets;
 
-import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.io.IOException;
+import java.io.PrintWriter;
 
 /**
  *
- * @author leona
+ * @author User1
  */
-public class servletHome extends HttpServlet {
+@WebServlet(name = "servletPromociones", urlPatterns = {"/servletPromociones"})
+public class servletPromociones extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -31,7 +33,11 @@ public class servletHome extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+
+          request.getRequestDispatcher("home/promotions.jsp").forward(request, response);
+        }
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -47,21 +53,8 @@ public class servletHome extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         HttpSession httpSession=request.getSession();
-        String user = request.getParameter("user");
-        String email = request.getParameter("email");
-        String id = request.getParameter("id");
-        httpSession.setAttribute("Usuario", user);
-        httpSession.setAttribute("Email", email);
-        httpSession.setAttribute("UID", id);
-        if(user!=null && email!=null && id != null) {
-            if (!user.isEmpty() && !email.isEmpty() && !id.isEmpty()) {
-                response.addHeader("Access-Control-Allow-Origin", "*");
-                request.getRequestDispatcher("home/home.jsp").forward(request, response);
-            }
-        }else {
-
-            request.getRequestDispatcher("index.jsp").forward(request, response);
-        }
+        httpSession.setAttribute("UID", request.getParameter("id"));
+        request.getRequestDispatcher("home/promotions.jsp").forward(request, response);
     }
 
     /**
@@ -75,9 +68,7 @@ public class servletHome extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession httpSession=request.getSession();
-	    httpSession.setAttribute("sessionUsuario", request.getParameter("user"));
-        request.getRequestDispatcher("home/home.jsp").forward(request, response);
+        processRequest(request, response);
     }
 
     /**

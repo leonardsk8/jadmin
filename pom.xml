@@ -3,11 +3,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.jukebox.admin</groupId>
-    <artifactId>JukeBoxAdmin_mvn</artifactId>
+    <artifactId>JukeboxAdministrator</artifactId>
     <version>1</version>
     <packaging>war</packaging>
 
-    <name>JukeBoxAdmin_mvn</name>
+    <name>JukeboxAdministrator</name>
 
     <properties>
         <endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>

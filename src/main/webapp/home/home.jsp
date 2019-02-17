@@ -7,7 +7,6 @@
 	<meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap -->
-    <%--<link href="/JukeboxAdministrator/assets/bootstrap/css/bootstrap.min.css" rel="stylesheet">--%>
     <link href="/JukeboxAdministrator/assets/css/bootstrap.css" rel="stylesheet">
     <!-- styles -->
       <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
@@ -49,15 +48,19 @@
                 <ul class="nav">
                     <!-- Main menu -->
                     <li class="current"><a href="home.html"><i class="glyphicon glyphicon-home"></i> INICIO </a></li>
-                    <li><a href="servletReloads?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID"
-                    )));%>"
+                    <li><a href="servletReloads?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>"
                            target="_blank"><i class="glyphicon-bitcoin"></i> RECARGAS </a></li>
-                    <li><a href=""><i class="glyphicon-calendar"></i> PROMOCIONES </a></li>
+                    <li><a href="servletPromociones?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
+                        ;%>" target="_blank"><i class="glyphicon-calendar"></i> PROMOCIONES </a></li>
                     <li><a href="servletRegistro?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
                         ;%>&email=<%out.print(String.valueOf(request.getSession().getAttribute("Email")));
                         %>&tipo=modificacion"><i class="glyphicon-stats"></i> EDITAR PERFIL </a></li>
                     <li><a href=""><i class="glyphicon-list"></i> EDITAR MENÚ </a></li>
-                    <li><a href=""><i class="glyphicon-list"></i> SALIR </a></li>
+                    <li><a href="https://qrcode.tec-it.com/API/QRCode?data=<%out.print(String.valueOf(
+                            request.getSession().getAttribute("UID")));%>&backcolor=%23ffffff&method=download">
+                        <i class="glyphicon-list"></i> DESCARGAR MI QR </a></li>
+                    <li><a href="">
+                        <i class="glyphicon-list"></i> SALIR </a></li>
 
                 </ul>
                             

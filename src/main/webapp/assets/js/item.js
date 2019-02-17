@@ -56,7 +56,7 @@ $(document).ready(function() {
         });
       }
       function onPlayerReady(event) {
-          
+          //event.target.mute();
           console.log("Listo el reproductorr");
         //event.target.playVideo();
       }
@@ -158,14 +158,14 @@ function iniciar(establishmentId){
 
      var starCountRef = firebase.database().ref('reproduction_list/establishment/' + establishmentId + '/songs');
         starCountRef.on('value', function(snapshot) {
-            //getNumSong();
+
             var songs = JSON.stringify(snapshot);
             var obj = JSON.parse(songs);
             var numSongs=0;     
             array = [];
             Approved = [];1
             for (let i in obj) {
-                var mySong = new Object();
+                var mySong = {};
                 mySong.name = obj[i].name;
                 mySong.video_id = obj[i].video_id;
                 mySong.approved = obj[i].approved;
@@ -183,6 +183,16 @@ function iniciar(establishmentId){
                 numSongs++;
 
             }
+            // array = array.sort(function (a, b) {
+            //     if (a.num > b.num) {
+            //         return 1;
+            //     }
+            //     if (a.name < b.num) {
+            //         return -1;
+            //     }
+            //     // a must be equal to b
+            //     return 0;
+            // });
             var json = JSON.stringify(array);
 			$.post('servletItem', {
 				json:json,
@@ -209,14 +219,15 @@ function iniciar(establishmentId){
               array = [];
               array = JSON.parse(responseText);
               auxArray = array;
-            });            
+            });getNumSong();
 
         });
 }
+
 function getNumSong(){
     $.get('servletItem', {
 	json:JSON.stringify(array),
-        option:1
+        option:4
 	}, function(responseText) {
            numeroCancion=responseText;
 
@@ -347,7 +358,9 @@ $("#btnNext").click(function () {
 });
 function toReproductionList(nameSong,idSong,establishmentId,thumbnail,user,userToken,userId,history){
     var mySong = {};
-    numeroCancion = parseInt(array.length)+parseInt(1);
+    var numeroCancion2 = parseInt(array.length)+parseInt(1);
+    // if(numeroCancion2 !== numeroCancion)
+    //     numeroCancion = auxArray.length;
     mySong.name = nameSong;
     mySong.video_id = idSong;
     mySong.approved = true;
@@ -355,7 +368,7 @@ function toReproductionList(nameSong,idSong,establishmentId,thumbnail,user,userT
     mySong.thumbnail = thumbnail;
     mySong.user = user;
     mySong.reproducing = false;
-    mySong.likes = 1;
+    mySong.likes = 0;
     mySong.userToken = userToken;
     array.push(mySong);
     firebase.database().ref('reproduction_list/establishment/' + establishmentId + '/songs/' + idSong).set(mySong)

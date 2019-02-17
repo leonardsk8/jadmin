@@ -63,7 +63,9 @@ public class servletItem extends HttpServlet {
         {}.getType();
         List<SongVO> listaCanciones = new Gson().fromJson(option, type);
         Collections.sort(listaCanciones);
-        Collections.sort(listaCanciones, (SongVO p1, SongVO p2) -> new Integer(p2.getLikes()).compareTo(p1.getLikes()));
+        if(val != 4){
+            Collections.sort(listaCanciones, (SongVO p1, SongVO p2) -> new Integer(p2.getLikes()).compareTo(p1.getLikes()));
+        }
         switch (val) {
             case 1:
                 int x = listaCanciones.get(listaCanciones.size()-1).getNum()+1;
@@ -75,6 +77,11 @@ public class servletItem extends HttpServlet {
             case 3:
                 out.print(new Gson().toJson(listaCanciones));
                 break;
+            case 4:
+                if(listaCanciones.size()>0)
+                    out.print(listaCanciones.get(listaCanciones.size()-1).getNum()+1);
+                else
+                    out.print(0);
             default:
                 break;
         }

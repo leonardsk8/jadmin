@@ -1,8 +1,3 @@
-<%-- 
-    Document   : item
-    Created on : Jun 8, 2018, 9:44:04 PM
-    Author     : leona
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 
@@ -19,7 +14,7 @@
         </div>
         <script>
            $("#--videoid--").click(function (){
-               var video = '<iframe class="video w100" width="300" height="200" src="//www.youtube.com/embed/--videoid--?autoplay=1" frameborder="0"></iframe>';
+               var video = '<iframe class="video w100" width="300" height="200" src="https://www.youtube.com/embed/--videoid--?autoplay=1?showinfo=0&enablejsapi=1&origin=http://localhost:8080" frameborder="0"></iframe>';
                $('#--videoid--').hide();
                $('#--videoid--tube').html(video);
             });
