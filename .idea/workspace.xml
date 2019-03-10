@@ -10,119 +10,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8c7c3806-3d6b-45f5-9c90-4cf2b144829f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/filter/FilterClass.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/webapp/home/promotions.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JukeBoxAdmin_mvn_war.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JukeBoxAdmin_mvn_war.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/JukeBoxAdmin_mvn_war_exploded.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/JukeBoxAdmin_mvn_war_exploded.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/servlets/servletMenu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/promotions.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/menu.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/promociones.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/webapp/home/menu.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/servlets/servletHome.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servlets/servletHome.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/JukeBoxAdmin_mvn.iml" beforeDir="false" afterPath="$PROJECT_DIR$/JukeBoxAdmin_mvn.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/servlets/servletItem.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servlets/servletItem.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/css/styles.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/css/styles.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/tpl/item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/tpl/item.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/tpl/item.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1.war" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/.firebaserc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/META-INF/MANIFEST.MF" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/META-INF/context.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletChat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletHome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletItem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletItem$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletItem$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletNotify.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletRegistro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletReloads.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletSongsItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/com/servlets/servletUnVetoed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/model/dto/CreditsVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/model/dto/SessionVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/model/dto/SongVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/classes/model/dto/UserLikeVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/lib/gson-2.8.5.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/WEB-INF/web.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/css/css.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/css/form-elements.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/css/style.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/css/styles.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/css/font-awesome.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/css/font-awesome.min.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/FontAwesome.otf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/fontawesome-webfont.eot" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/fontawesome-webfont.svg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/fontawesome-webfont.ttf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/fontawesome-webfont.woff" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/fonts/fontawesome-webfont.woff2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/animated.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/bordered-pulled.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/core.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/fixed-width.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/font-awesome.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/icons.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/larger.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/list.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/mixins.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/path.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/rotated-flipped.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/stacked.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/less/variables.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_animated.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_bordered-pulled.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_core.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_fixed-width.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_icons.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_larger.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_list.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_mixins.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_path.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_rotated-flipped.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_stacked.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/_variables.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/font-awesome/scss/font-awesome.scss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/ico/apple-touch-icon-114-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/ico/apple-touch-icon-144-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/ico/apple-touch-icon-57-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/ico/apple-touch-icon-72-precomposed.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/ico/favicon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/img/backgrounds/1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/img/backgrounds/1@2x.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/img/backgrounds/1_1.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/img/backgrounds/logo.jpg" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/img/logo1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/app.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/autentication.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/chat.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/item.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/jquery-1.11.1.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/jquery-1.11.1.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/jquery.backstretch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/jquery.backstretch.min.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/notify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/placeholder.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/reload.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/scriptLogIn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/scripts.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/js/unvetoed.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/tpl/item.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/assets/tpl/item.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/database.rules.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/firebase.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/home/chat.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/home/home.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/home/notify.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/home/reloads.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/home/unvetoed.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/JukeBoxAdmin_mvn-1/index.jsp" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletHome.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/servlets/servletHome.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/webapp/home/promotions.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home/promotions.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/servlets/servletItem.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
@@ -137,50 +39,80 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="210">
-              <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="319">
-              <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+            <state relative-caret-position="165">
+              <caret line="143" column="41" lean-forward="true" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
               <folding>
-                <element signature="e#0#3043#0" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletRegistro.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletMenu.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="187">
-              <caret line="54" column="68" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="68" />
+            <state relative-caret-position="180">
+              <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+              <folding>
+                <element signature="e#1418#1537#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/promociones.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="347">
-              <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+            <state relative-caret-position="2895">
+              <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/home/promotions.jsp">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/home/menu.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="277">
-              <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+            <state relative-caret-position="975">
+              <caret line="65" column="50" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="50" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/menu.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1275">
+              <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="420">
+              <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1635">
+              <caret line="109" column="63" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/reload.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="495">
+              <caret line="33" column="23" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="23" />
             </state>
           </provider>
         </entry>
@@ -193,41 +125,42 @@
         <option value="JavaScript File" />
         <option value="Class" />
         <option value="Jsp File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>pop</find>
-      <find>$(&quot;.popup, .popup-content&quot;).removeClass(&quot;active&quot;);</find>
-      <find>guardar</find>
-      <find>subir</find>
-      <find>cargar</find>
-      <find>nombres</find>
-      <find>btnPl</find>
-      <find>conten-bo</find>
-      <find>Buscar</find>
-      <find>content-box-he</find>
-      <find>toRe</find>
-      <find>toRepr</find>
-      <find>tor</find>
-      <find>Int</find>
-      <find>valor[indice]</find>
-      <find>#aprobacion</find>
-      <find>apro</find>
-      <find>jsonp</find>
-      <find>doubleclick</find>
-      <find>player</find>
-      <find>youtube|</find>
-      <find>Allow</find>
-      <find>onPla</find>
-      <find>youtube</find>
-      <find>youtu</find>
-      <find>toRepro</find>
-      <find>toRep</find>
-      <find>toReproduc</find>
-      <find>torepro</find>
       <find>t</find>
+      <find>player</find>
+      <find>html</find>
+      <find>UID</find>
+      <find>register</find>
+      <find>modal</find>
+      <find>result</find>
+      <find>model</find>
+      <find>date</find>
+      <find>c</find>
+      <find>nuevo</find>
+      <find>cerrar</find>
+      <find>cerra</find>
+      <find>hand</find>
+      <find>edit</find>
+      <find>guardar</find>
+      <find>new</find>
+      <find>edi</find>
+      <find>create</find>
+      <find>regist</find>
+      <find>items</find>
+      <find>cer</find>
+      <find>promotion</find>
+      <find>pro</find>
+      <find>promo</find>
+      <find>limit</find>
+      <find>[i]</find>
+      <find>nameMenu</find>
+      <find>Menu</find>
+      <find>concate</find>
     </findStrings>
     <replaceStrings>
       <replace>c</replace>
@@ -235,6 +168,7 @@
       <replace>&lt;td class=&quot;check&quot;&gt;</replace>
       <replace>photo1</replace>
       <replace>mySong</replace>
+      <replace>menu</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -258,24 +192,29 @@
         <option value="$USER_HOME$/tomcat_8.5.3/conf/server.xml" />
         <option value="$PROJECT_DIR$/src/main/java/model/dto/SessionVO.java" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/unvetoed.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/home/registro.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/home/chat.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/home/reloads.jsp" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/reload.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/app.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/styles.css" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/registro.js" />
         <option value="$PROJECT_DIR$/src/main/java/com/FilterClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/filter/FilterClass.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/servlets/servletHome.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/tpl/item.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/promotions.css" />
         <option value="$PROJECT_DIR$/src/main/java/com/servlets/servletItem.java" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" />
-        <option value="$PROJECT_DIR$/src/main/webapp/home/promotions.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
-        <option value="$PROJECT_DIR$/src/main/webapp/home/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/home/registro.jsp" />
         <option value="$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/css/styles.css" />
+        <option value="$PROJECT_DIR$/src/main/webapp/home/promotions.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/promociones.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml" />
+        <option value="$PROJECT_DIR$/src/main/webapp/home/menu.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/menu.js" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" />
+        <option value="$PROJECT_DIR$/src/main/java/com/servlets/servletMenu.java" />
+        <option value="$PROJECT_DIR$/src/main/webapp/home/home.jsp" />
       </list>
     </option>
   </component>
@@ -315,10 +254,10 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-48" />
-    <option name="y" value="24" />
-    <option name="width" value="1319" />
-    <option name="height" value="744" />
+    <option name="x" value="46" />
+    <option name="y" value="-11" />
+    <option name="width" value="1321" />
+    <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
@@ -326,39 +265,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JukeboxAdministrator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -398,8 +304,7 @@
               <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="java" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="com" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="servlets" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="model" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
             <path>
               <item name="JukeboxAdministrator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
@@ -408,21 +313,38 @@
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
             </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
             <path>
-              <item name="JukeboxAdministrator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="home" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="JukeboxAdministrator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
-              <item name="JukeboxAdministrator" type="3d21c010:ScopeViewTreeModel$ProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="2674bda8:ScopeViewTreeModel$GroupNode" />
-              <item name="src" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-              <item name="WEB-INF" type="9f88c78c:ScopeViewTreeModel$FileNode" />
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -433,8 +355,9 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550440372061" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1551929764925" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
@@ -442,18 +365,18 @@
     <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/assets/js" />
       <recent name="$PROJECT_DIR$/src/main/webapp/home" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/assets/css" />
+      <recent name="$PROJECT_DIR$/src/main/webapp/assets/img" />
+      <recent name="$PROJECT_DIR$/src/main/webapp" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.servlets" />
     </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/main/webapp/assets/js" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/assets/css" />
-      <recent name="$PROJECT_DIR$/src/main/webapp/assets/img" />
-      <recent name="$PROJECT_DIR$/src/main/webapp" />
-      <recent name="C:\Users\User1.DESKTOP-MVHNA22\Documents\NetBeansProjects\JukeBoxAdmin_mvn\src\main\webapp\home" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/webapp/home" />
     </key>
   </component>
   <component name="RemoteSynchronizer">
@@ -664,7 +587,15 @@
       <workItem from="1550192887319" duration="263000" />
       <workItem from="1550195899535" duration="219000" />
       <workItem from="1550196583318" duration="687000" />
-      <workItem from="1550432393877" duration="2635000" />
+      <workItem from="1550432393877" duration="20290000" />
+      <workItem from="1550539530411" duration="1060000" />
+      <workItem from="1550622960453" duration="6961000" />
+      <workItem from="1550952298527" duration="23227000" />
+      <workItem from="1551578792746" duration="12642000" />
+      <workItem from="1551652952523" duration="198000" />
+      <workItem from="1551919614090" duration="1210000" />
+      <workItem from="1551924289751" duration="4081000" />
+      <workItem from="1552227573710" duration="2066000" />
     </task>
     <task id="LOCAL-00001" summary="INITIAL COMMIT">
       <created>1548628459793</created>
@@ -687,17 +618,32 @@
       <option name="project" value="LOCAL" />
       <updated>1549838107523</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="CARACTERISTICA: TESTEO EN LA U">
+      <created>1550440422054</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1550440422054</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="216537000" />
+    <option name="totallyTimeSpent" value="285664000" />
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
   </component>
   <component name="ToolWindowManager">
     <frame x="46" y="-11" width="1321" height="780" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49784482" visible="true" weight="0.21681069" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49784482" visible="true" weight="0.24351925" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -708,15 +654,15 @@
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.34728682" />
-      <window_info anchor="bottom" id="Debug" order="3" visible="true" weight="0.28062016" />
+      <window_info active="true" anchor="bottom" id="Debug" order="3" sideWeight="0.49960724" visible="true" weight="0.28062016" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.25502318" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.32868218" />
+      <window_info anchor="bottom" id="Application Servers" order="7" weight="0.25426358" />
       <window_info anchor="bottom" id="Terminal" order="8" weight="0.32868218" />
-      <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
+      <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5003928" side_tool="true" weight="0.28062016" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32972136" />
-      <window_info anchor="bottom" id="Java Enterprise" order="11" />
+      <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32868218" />
       <window_info anchor="bottom" id="Database Changes" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="13" />
       <window_info anchor="bottom" id="RemoteSynchronizer" order="14" />
@@ -726,13 +672,13 @@
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
-      <window_info anchor="right" id="JSF" order="5" />
+      <window_info anchor="right" id="JSF" order="5" weight="0.3299293" />
       <window_info anchor="right" id="Maven Projects" order="6" visible="true" weight="0.16967793" />
       <window_info anchor="right" id="Database" order="7" />
       <window_info anchor="right" id="Palette&#9;" order="8" />
       <window_info anchor="right" id="Theme Preview" order="9" />
       <window_info anchor="right" id="CDI" order="10" />
-      <window_info anchor="right" id="Bean Validation" order="11" />
+      <window_info anchor="right" id="Bean Validation" order="11" weight="0.3299293" />
       <window_info anchor="right" id="Maven" order="12" weight="0.15318146" />
       <window_info anchor="right" x="0" y="0" width="279" height="572" id="Documentation" order="13" side_tool="true" weight="0.3299293" />
     </layout>
@@ -790,7 +736,9 @@
     <MESSAGE value="INITIAL COMMIT" />
     <MESSAGE value="CARACTERISTICA: REGISTRAR BAR" />
     <MESSAGE value="CARACTERISTICA: AUTO ACEPTACIÓN DE CANCIONES" />
-    <option name="LAST_COMMIT_MESSAGE" value="CARACTERISTICA: AUTO ACEPTACIÓN DE CANCIONES" />
+    <MESSAGE value="CARACTERISTICA: TESTEO EN LA U" />
+    <MESSAGE value="CARACTERISTICA: AGREGAR PROMOCIONES Y MENU" />
+    <option name="LAST_COMMIT_MESSAGE" value="CARACTERISTICA: AGREGAR PROMOCIONES Y MENU" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,31 +758,6 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/registro2.jsp" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletSongsItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="18" column="13" selection-start-line="18" selection-start-column="13" selection-end-line="18" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/notify.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/scripts.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="57" selection-start-line="10" selection-start-column="57" selection-end-line="10" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/select2.min.css" />
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/select2.min.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/select2.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/select2.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -929,11 +852,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/unvetoed.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-22" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/home/chat.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -961,24 +879,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/styles.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="295" column="1" lean-forward="true" selection-start-line="295" selection-start-column="1" selection-end-line="295" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/model/dto/SongVO.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-45">
           <caret line="13" column="13" selection-start-line="13" selection-start-column="13" selection-end-line="13" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/registro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="335" column="26" selection-start-line="335" selection-start-column="26" selection-end-line="335" selection-end-column="26" />
         </state>
       </provider>
     </entry>
@@ -1004,13 +908,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/filter/FilterClass.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-83">
@@ -1032,27 +929,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletItem.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="158" column="25" lean-forward="true" selection-start-line="158" selection-start-column="25" selection-end-line="158" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/reload.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="382">
-          <caret line="33" column="14" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="22" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletIndex.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="382">
@@ -1063,13 +939,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="37">
-          <caret line="352" column="42" selection-start-line="352" selection-start-column="42" selection-end-line="352" selection-end-column="42" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/tpl/item.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -1077,47 +946,157 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletRegistro.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="347">
-          <caret line="71" column="40" selection-start-line="71" selection-start-column="40" selection-end-line="71" selection-end-column="40" />
+        <state relative-caret-position="232">
+          <caret line="56" column="71" lean-forward="true" selection-start-line="56" selection-start-column="71" selection-end-line="56" selection-end-column="71" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
+    <entry file="jar://$APPLICATION_HOME_DIR$/lib/platform-impl.jar!/resources/html5-schema/html5/block.rnc">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="53" column="27" selection-start-line="53" selection-start-column="27" selection-end-line="53" selection-end-column="27" />
+        <state relative-caret-position="145">
+          <caret line="248" column="16" selection-start-line="248" selection-start-column="16" selection-end-line="248" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/promotions.jsp">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/promotions.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="277">
-          <caret line="20" column="45" selection-start-line="20" selection-start-column="45" selection-end-line="20" selection-end-column="45" />
+        <state relative-caret-position="367">
+          <caret line="51" column="1" lean-forward="true" selection-start-line="51" selection-start-column="1" selection-end-line="51" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="41" selection-start-line="18" selection-start-column="41" selection-end-line="18" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletItem.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-328">
+          <caret line="107" column="33" lean-forward="true" selection-start-line="107" selection-start-column="33" selection-end-line="107" selection-end-column="33" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/home/registro.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1802">
-          <caret line="498" column="61" selection-start-line="498" selection-start-column="61" selection-end-line="498" selection-end-column="61" />
+        <state relative-caret-position="-428">
+          <caret line="459" column="60" selection-start-line="459" selection-start-column="60" selection-end-line="459" selection-end-column="60" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletRegistro.java">
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/unvetoed.jsp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/css/styles.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="54" column="68" lean-forward="true" selection-start-line="54" selection-start-column="8" selection-end-line="54" selection-end-column="68" />
+        <state relative-caret-position="15">
+          <caret line="22" column="1" selection-start-line="22" selection-start-column="1" selection-end-line="22" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/registro.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="157">
+          <caret line="626" column="4" selection-start-line="626" selection-start-column="4" selection-end-line="627" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/WEB-INF/web.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="317">
+          <caret line="78" column="19" lean-forward="true" selection-start-line="78" selection-start-column="19" selection-end-line="78" selection-end-column="19" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletPromociones.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="319">
-          <caret line="55" column="68" selection-start-line="55" selection-start-column="68" selection-end-line="55" selection-end-column="68" />
+        <state relative-caret-position="675">
+          <caret line="59" column="8" selection-start-line="59" selection-start-column="8" selection-end-line="59" selection-end-column="68" />
           <folding>
-            <element signature="e#0#3043#0" expanded="true" />
+            <element signature="e#4375#4376#0" expanded="true" />
+            <element signature="e#4417#4418#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/promotions.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="127">
+          <caret line="50" column="40" selection-start-line="50" selection-start-column="40" selection-end-line="50" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/autentication.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/promociones.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2895">
+          <caret line="193" column="26" selection-start-line="193" selection-start-column="26" selection-end-line="193" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/menu.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="50" selection-start-line="65" selection-start-column="32" selection-end-line="65" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/menu.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1275">
+          <caret line="85" column="18" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="420">
+          <caret line="28" column="35" selection-start-line="28" selection-start-column="35" selection-end-line="28" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1635">
+          <caret line="109" column="63" selection-start-line="109" selection-start-column="63" selection-end-line="109" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/reload.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="495">
+          <caret line="33" column="23" selection-start-line="33" selection-start-column="14" selection-end-line="33" selection-end-column="23" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/servlets/servletMenu.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="29" column="66" lean-forward="true" selection-start-line="29" selection-start-column="66" selection-end-line="29" selection-end-column="66" />
+          <folding>
+            <element signature="e#1418#1537#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="165">
+          <caret line="143" column="41" lean-forward="true" selection-start-line="143" selection-start-column="41" selection-end-line="143" selection-end-column="41" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

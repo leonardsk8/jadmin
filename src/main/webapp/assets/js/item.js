@@ -44,6 +44,7 @@ $(document).ready(function() {
 
 
 });
+
       function onYouTubeIframeAPIReady() {
         player = new YT.Player('player', {
           height: '360',
@@ -52,6 +53,9 @@ $(document).ready(function() {
           events: {
             'onReady': onPlayerReady,
             'onStateChange': onPlayerStateChange
+          },
+          playerVars:{
+              'origin':'http://localhost:8080'
           }
         });
       }
@@ -109,7 +113,6 @@ function iniciarUsuarios(establishmentId){
                    arrayUsers.push(user);
                else if(user.sessionState === "vetoed")
                    arrayUsersVetoed.push(user);
-               
            }
            
            console.log(arrayUsers);

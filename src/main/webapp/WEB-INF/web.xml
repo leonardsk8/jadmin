@@ -72,6 +72,10 @@
         <servlet-name>servletPromociones</servlet-name>
         <url-pattern>/servletPromociones</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletMenu</servlet-name>
+        <url-pattern>/servletMenu</url-pattern>
+    </servlet-mapping>
     <!--<filter>-->
         <!--<filter-name>CorsFilter</filter-name>-->
         <!--<filter-class>com.filter.FilterClass</filter-class>-->

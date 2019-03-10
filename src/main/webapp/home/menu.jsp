@@ -1,7 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>PROMOCIONES</title>
+    <title>MENÚ</title>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
     <meta content="utf-8" http-equiv="encoding">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -19,7 +19,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="home.html">Promociones</a></h1>
+                    <h1><a href="#">Menú</a></h1>
                     <input id="idEstablishment" type="hidden" value="<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
                 </div>
             </div>
@@ -31,7 +31,7 @@
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                     </div>
                     <div id="contentMessage" class="modal-body">
-                        <h4>REGISTRANDO PROMO</h4>
+                        <h4>MENÚ</h4>
                     </div>
                     <div class="modal-footer">
                         <a href="#" data-dismiss="modal" class="btn btn-danger">Cerrar</a>
@@ -50,33 +50,21 @@
         <div class="container">
             <div id="items" class="row">
                 <div class="gallery col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <h1 class="gallery-title">Tus promociones</h1>
+                    <h1 class="gallery-title">Tu menú</h1>
                     <div align="center">
-                        <button id="newPromotion" class="btn btn-default filter-button" >Nuevo</button>
-                        <button class="btn btn-default filter-button filter-buttonC" data-filter="todo">Todas</button>
-                        <button class="btn btn-default filter-button filter-buttonC" data-filter="vigente">Vigentes</button>
-                        <button class="btn btn-default filter-button filter-buttonC" data-filter="vencido">Vencidas</button>
+                        <button id="newProduct" class="btn btn-default filter-button" >Nuevo</button>
                     </div>
                 </div>
                 <br id="mainContent"/>
             </div>
             <div id="register">
-                <h1>Registrar promoción</h1>
-
+                <h1>Registrar nuevo producto</h1>
                 <fieldset>
                     <legend><span class="number">1</span>Información basica</legend>
-                    <label for="namePromo">Nombre de la promo</label>
-                    <input type="text" id="namePromo" name="namePromo" required>
-
-                    <label for="descriptionPromo">Descripción:</label>
-                    <input type="text" id="descriptionPromo" name="descriptionPromo" required>
-
-                    <label for="endDate">Fecha de expiración:</label>
-                    <input type="date" id="endDate" name="trip-start"
-                           value="2019-08-25"
-                           min="2019-02-01" max="2019-12-31" >
-                    <label for="endHour">Hora de expiración:</label>
-                    <input type="time" id="endHour" name="trip-start"/>
+                    <label for="nameProduct">Nombre del producto</label>
+                    <input type="text" id="nameProduct" name="namePromo" required>
+                    <label for="descriptionProduct">Descripción:</label>
+                    <input type="text" id="descriptionProduct" name="descriptionPromo" required>
                     <input type="file" class="file-select1" accept="image/*"/>
                     <button  class="file-submit">Subir</button>
                     <td><div id="result1"></div></td>
@@ -86,8 +74,8 @@
                     <img id="img1">
                 </fieldset>
                 <fieldset>
-                    <label for="limitPromo">Limite para redimir este código</label>
-                    <input id="limitPromo" type="text"/>
+                    <label for="price">Precio </label>
+                    <input id="price" type="text"/>
                 </fieldset>
                 <button id="registrarPromo" class="registrarPromo">Guardar</button>
                 <button id="cerrarPromo" class="cerrarPromo">Cerrar</button>
@@ -98,7 +86,7 @@
 
 <script src="/JukeboxAdministrator/assets/js/jquery-1.11.1.js"></script>
 <script src="/JukeboxAdministrator/assets/js/select2.js"></script>
-<script src="/JukeboxAdministrator/assets/js/promociones.js"></script>
+<script src="/JukeboxAdministrator/assets/js/menu.js"></script>
 <script src="/JukeboxAdministrator/assets/js/bootstrap.js"></script>
 <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
 

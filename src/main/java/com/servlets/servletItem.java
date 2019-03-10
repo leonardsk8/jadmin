@@ -127,7 +127,7 @@ public class servletItem extends HttpServlet {
                      int x = (s.getName().length()>28)?28:s.getName().length();
                      var += ""
                          + "<li id='listHeaderToApproved' draggable='true'>"
-                         + "<a class='nameSong' href='https://www.youtube.com/watch?v="+s.getVideo_id()+"' target=\"_blank\">"
+                         + "<a class='nameSong' href='https://www.youtube.com/embed/"+s.getVideo_id()+"?mute=1;autoplay=1' target=\"_blank\">"
                          + ""+s.getName().substring(0, x).toLowerCase()+".4..</a><button type=\"button\" class=\"btn btn-warning btn1A\""
                          + "onclick=\"toReproductionList('"+s.getName().replace("\"", "").replace("'","")+"','"+s.getVideo_id()
                          + "','"+ request.getSession().getAttribute("UID") +"','"+s.getThumbnail()+"','"+s.getUser()+"','"+s.getToken()
