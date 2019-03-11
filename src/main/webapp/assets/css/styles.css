@@ -122,6 +122,10 @@ label.light {
     border-radius: 100%;
 }
 
+#searchYoutubeForm{
+    max-width: 2200px;
+}
+
 @media screen and (min-width: 480px) {
 
     form {

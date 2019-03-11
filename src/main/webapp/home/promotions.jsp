@@ -19,7 +19,7 @@
             <div class="col-md-5">
                 <!-- Logo -->
                 <div class="logo">
-                    <h1><a href="home.html">Promociones</a></h1>
+                    <h1><a href="#">Promociones</a></h1>
                     <input id="idEstablishment" type="hidden" value="<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
                 </div>
             </div>

@@ -4,7 +4,7 @@
 <html>
     <body>
             <div class="contenedor">
-        <h2>--title--</h2>
+        <h4>--title--</h4>
         <div id="--videoid--" class="reproductor" data-id="--videoid--">
             <img id="--videoid--img" data-id="--videoid--" class="imagen-previa" src="https://i.ytimg.com/vi/--videoid--/mqdefault.jpg"><div class="youtube-play"></div>
         </div>
@@ -18,7 +18,6 @@
                $('#--videoid--').hide();
                $('#--videoid--tube').html(video);
             });
-                      
         </script>
     </body>
     

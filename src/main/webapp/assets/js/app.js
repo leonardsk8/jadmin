@@ -14,9 +14,18 @@
           var results = response.result;
           $("#results").html("");
           $.each(results.items, function(index, item) {
+              // console.log(item);
+              // console.log(index);
+              var title = item.snippet.title;
+              if(title.length>30){
+                title = title.substring(0, 31);
+              }
+              title = title.replace("&#39;","");
+              title = title.replace("(","");
+              title = title.replace(")","");
             $.get("/JukeboxAdministrator/assets/tpl/item.jsp", function(data) {
-              
-                $("#results").append(tplawesome(data, [{"title":item.snippet.title, "videoid":item.id.videoId}]));
+
+                $("#results").append(tplawesome(data, [{"title":title, "videoid":item.id.videoId}]));
             });
           });
           resetVideoHeight();

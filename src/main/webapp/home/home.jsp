@@ -13,7 +13,7 @@
     <link href="/JukeboxAdministrator/assets/css/styles.css" rel="stylesheet">
 
 </head>
-<body>
+<body >
 <div class="header">
     <div class="container">
         <div class="row">
@@ -46,7 +46,6 @@
         <div class="col-md-2">
             <div class="sidebar content-box" style="display: block;">
                 <ul class="nav">
-                    <!-- Main menu -->
                     <li class="current"><a href="home.html"><i class="glyphicon glyphicon-home"></i> INICIO </a></li>
                     <li>
                         <a href="servletReloads?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>"
@@ -62,7 +61,9 @@
                     <li><a href="https://qrcode.tec-it.com/API/QRCode?data=<%out.print(String.valueOf(
                             request.getSession().getAttribute("UID")));%>&backcolor=%23ffffff&method=download">
                         <i class="glyphicon-list"></i> DESCARGAR MI QR </a></li>
-                    <li><a href="">
+                    <li><a target="_blank" href="servletRedeem?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
+                        <i class="glyphicon-list"></i> REDIMIR PROMO</a></li>
+                    <li><a href="servletIndex">
                         <i class="glyphicon-list"></i> SALIR </a></li>
 
                 </ul>
@@ -105,7 +106,7 @@
 
                 <div class="col-md-6 panel-warning">
                     <div class="content-box-header panel-heading">
-                        <div class="panel-title ">USUARIOS</div>
+                        <div class="panel-title "><a onClick="limpiarUsuarios()">USUARIOS</a></div>
                         <a style="float: right;" onclick="unVetoedUser()">UsuariosVetado</a>
 
                     </div>
@@ -117,7 +118,7 @@
                 </div>
                 <div class="col-md-6 panel-warning">
                     <div id="listaAprobar" class="content-box-header panel-heading">
-                        <div class="panel-title">CANCIONES POR APROBAR</div>
+                        <div class="panel-title" > CANCIONES POR APROBAR</div>
                         <div style="float: right">
                             <div class="checkbox">
                                 <label class="checkbox-inline">
@@ -141,8 +142,8 @@
                         <div class="panel-title ">BUSCAR EN YOUTUBE</div>
                     </div>
                     <div class="content-box-large box-with-header">
-                        <form action="#">
-                            <p><input type="text" id="search" placeholder="Type something..." autocomplete="off"
+                        <form id="searchYoutubeForm" action="#">
+                            <p><input type="text" id="search" placeholder="Escribe el nombre de la canción" autocomplete="off"
                                       class="form-control"/></p>
                             <p><input type="submit" value="Search" class="form-control btn btn-primary w100"></p>
                             <input id="idEstablishment" type="hidden"
@@ -163,7 +164,7 @@
     <div class="container">
 
         <div class="copy text-center">
-            Copyright 2018 <a href='#'>JUKEBOX</a>
+            Copyright 2019 <a href='#'>JUKEBOX</a>
         </div>
 
     </div>

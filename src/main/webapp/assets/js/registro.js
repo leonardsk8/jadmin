@@ -244,6 +244,11 @@ function setObject(bar) {
         document.location.href = "/JukeboxAdministrator/servletHome?user=null"+"&email="+email+"&id="+establishment;
     });
 }
+function setRegistry() {
+    var obj = {};
+    obj.value=true;
+    firebase.database().ref('registry/establishment/'+establishment).set(value);
+}
 
 $("#botonGuardar").click(function () {
     if(latitude === 0 & lenght === 0){
@@ -346,6 +351,7 @@ $("#botonGuardar").click(function () {
     bar.images = images;
     bar.requestApproved = true;
     setObject(bar);
+    setRegistry();
 });
 
 //SCHEDULE

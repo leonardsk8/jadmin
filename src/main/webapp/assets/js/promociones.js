@@ -125,7 +125,7 @@ $("#registrarPromo").on("click",function () {
     if(edit)
         pro_code = code;
     else
-        pro_code = getRandomInt(1,1000);
+        pro_code = getRandomInt(1,999);
     var pro_count = 0;
     var pro_description = $("#descriptionPromo").val();
     var pro_name = $("#namePromo").val();
@@ -138,11 +138,6 @@ $("#registrarPromo").on("click",function () {
         return;
     }
     var promo = {};
-    console.log(pro_description)
-    console.log(pro_name)
-    console.log(pro_expiration_date)
-    console.log(pro_image)
-    console.log(pro_code)
     if(pro_description === "" || pro_name === ""){
         document.getElementById("contentMessage").innerHTML = "<h5>Debe completar todos los campos</h5>";
         return;
@@ -264,10 +259,7 @@ function editPromo(pro_code) {
             $('#img1').prop('class', "img-thumbnail");
 
         }
-
     });
-
-
 }
 function fechasDif(date1,date2) {
     var fechaInicio = new Date(date1).getTime();
