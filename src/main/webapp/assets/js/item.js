@@ -315,12 +315,12 @@ function removeSong(idVideo, notify, token, nameSong, idUser) {
       songId:idVideo
     };
     var random = getRandomInt(0,100000000);
-    firebase.database().ref('reports/establishment/'+establishment+'/songs/rechazadas/'+random).set(s)
-        .then(function (result) {
-            console.log("Exito ")
-        }).catch(function (error) {
-        console.log("ERROR FATAL ")
-    });
+    // firebase.database().ref('reports/establishment/'+establishment+'/songs/rechazadas/'+random).set(s)
+    //     .then(function (result) {
+    //         console.log("Exito ")
+    //     }).catch(function (error) {
+    //     console.log("ERROR FATAL ")
+    // });
     firebase.database().ref('reproduction_list/establishment/' + establishment + '/songs/' + idVideo).remove();
     console.log("FINALIZANDO");
     if (notify === true) {

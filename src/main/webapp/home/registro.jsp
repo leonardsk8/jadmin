@@ -557,7 +557,6 @@
                         <button id="botonGuardar" type="button" class="btn btn-success">REGISTRAR</button>
                     </div>
                   </div>
-
               </div>
                       </div>
             </div>
