@@ -122,7 +122,7 @@ function selectUser(uidUser,userName){
             creditosActuales = obj.credits
         else
             creditosActuales = 0
-        $("#userSelected").html("Usuario seleccionado: "+userNameSelected+"<br/> UID:"+uidUserSelected+"<br/>" +
+        $("#userSelected").html("Usuario seleccionado: "+userNameSelected+"<br/>" +
             "Creditos actuales:  "+creditosActuales);
     });
 } 

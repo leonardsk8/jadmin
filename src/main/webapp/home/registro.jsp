@@ -487,13 +487,13 @@
 
 
                           </div>
-                          <div class="popup-overlay">
-                              <!--Creates the popup content-->
-                              <div id="divCargando" class="popup-content">
-                                  <h2>CARGANDO</h2>
-                                  <p> CARGANDO POR FAVOR ESPERE</p>
-                              </div>
-                          </div>
+                          <%--<div class="popup-overlay">--%>
+                              <%--<!--Creates the popup content-->--%>
+                              <%--<div id="divCargando" class="popup-content">--%>
+                                  <%--<h2>CARGANDO</h2>--%>
+                                  <%--<p> CARGANDO POR FAVOR ESPERE</p>--%>
+                              <%--</div>--%>
+                          <%--</div>--%>
                       </div>
                       <div class="col-md-4 col-lg-4 col-sm-12">
                           <h3>Clic en la imagen para eliminar</h3>
@@ -569,7 +569,7 @@
         <script src="/JukeboxAdministrator/assets/js/registro.js"></script>
         <script src="/JukeboxAdministrator/assets/js/bootstrap.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
-        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyA78DDXRBSSKiKs7elTIyWdwS7B-N5O9FQ&callback=initMap"
+        <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBpKHCHCNShMkZPhQCcC19O7okqQQi3oqY&callback=initMap"
                 async defer></script>
 
 

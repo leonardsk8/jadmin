@@ -58,9 +58,15 @@
                     <li><a target="_blank"
                            href="servletMenu?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>"><i
                             class="glyphicon-list"></i> EDITAR MENÚ </a></li>
+                    <li><a target="_blank" href="servletReportes?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")))
+                        ;%>">
+                        <i class="glyphicon-list"></i> REPORTES </a></li>
                     <li><a href="https://qrcode.tec-it.com/API/QRCode?data=<%out.print(String.valueOf(
                             request.getSession().getAttribute("UID")));%>&backcolor=%23ffffff&method=download">
                         <i class="glyphicon-list"></i> DESCARGAR MI QR </a></li>
+                    <li><a href="https://qrcode.tec-it.com/API/QRCode?data=<%out.print(String.valueOf(
+                            request.getSession().getAttribute("UID")));%>&backcolor=%23ffffff&method=download">
+                        <i class="glyphicon-list"></i> DESCARGAR RECURSOS</a></li>
                     <li><a target="_blank" href="servletRedeem?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
                         <i class="glyphicon-list"></i> REDIMIR PROMO</a></li>
                     <li><a href="servletIndex">
@@ -170,9 +176,7 @@
     </div>
 </footer>
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
 <script src="/JukeboxAdministrator/assets/js/jquery-1.11.1.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/JukeboxAdministrator/assets/js/bootstrap.js"></script>
 <!--    <script src="../assets/js/auth.js"></script>-->
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script>

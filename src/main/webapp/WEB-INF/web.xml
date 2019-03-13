@@ -80,6 +80,10 @@
         <servlet-name>servletRedeem</servlet-name>
         <url-pattern>/servletRedeem</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>servletReportes</servlet-name>
+        <url-pattern>/servletReportes</url-pattern>
+    </servlet-mapping>
     <!--<filter>-->
         <!--<filter-name>CorsFilter</filter-name>-->
         <!--<filter-class>com.filter.FilterClass</filter-class>-->

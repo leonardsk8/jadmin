@@ -17,8 +17,11 @@
               // console.log(item);
               // console.log(index);
               var title = item.snippet.title;
-              if(title.length>30){
-                title = title.substring(0, 31);
+              if(title.length>36){
+                title = title.substring(0, 36);
+              }
+              if(title.length<23){
+                  title += "           ";
               }
               title = title.replace("&#39;","");
               title = title.replace("(","");

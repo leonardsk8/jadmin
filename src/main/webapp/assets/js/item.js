@@ -2,6 +2,7 @@
 
 
 var establishmentObject;
+var establishmentRegistry;
 var numeroCancion = 0;
 var player;
 var array = [];
@@ -129,6 +130,7 @@ function iniciarUsuarios(establishmentId) {
 $(function () {
     $('#aprobacion').change(function () {
         aprobacion = $(this).prop('checked');
+        console.log("Se asignara "+aprobacion);
         updateAprobacion(aprobacion);
     })
 });
@@ -289,7 +291,7 @@ function setHistorySong(nameSong, state, idVideo, userId) {
     mySongHistory.dateSong = date;
     mySongHistory.stateSong = state;
     mySongHistory.thumnailSong = "https://img.youtube.com/vi/" + idVideo + "/mqdefault.jpg";
-    mySongHistory.nameBar = establishmentObject.name;
+    mySongHistory.nameBar = establishmentObject.name+"";
     mySongHistory.videoIdSong = idVideo;
     firebase.database().ref('history/users/song/' + userId + "/" + idVideo).set(mySongHistory)
         .then(function (result) {
@@ -298,7 +300,9 @@ function setHistorySong(nameSong, state, idVideo, userId) {
         console.log("Error historial");
     });
 }
-
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
 function removeSong(idVideo, notify, token, nameSong, idUser) {
 
 
@@ -306,6 +310,17 @@ function removeSong(idVideo, notify, token, nameSong, idUser) {
         selectUser(idUser);
         setHistorySong(nameSong, "Rechazada", idVideo, idUser);
     }
+    var s = {
+      idUser:idUser,
+      songId:idVideo
+    };
+    var random = getRandomInt(0,100000000);
+    firebase.database().ref('reports/establishment/'+establishment+'/songs/rechazadas/'+random).set(s)
+        .then(function (result) {
+            console.log("Exito ")
+        }).catch(function (error) {
+        console.log("ERROR FATAL ")
+    });
     firebase.database().ref('reproduction_list/establishment/' + establishment + '/songs/' + idVideo).remove();
     console.log("FINALIZANDO");
     if (notify === true) {
@@ -409,8 +424,11 @@ function getInfoBar(establishmentId) {
     starCountRef.once('value', function (snapshot) {
         var establishment = JSON.stringify(snapshot);
         var obj = JSON.parse(establishment);
-        if (obj != null)
+        if (obj != null){
             establishmentObject = obj;
+            // console.log("establishment Object");
+            // console.log(establishmentObject);
+        }
         if (establishmentObject.requestApproved === undefined || establishmentObject.requestApproved === false)
             $('#aprobacion').bootstrapToggle('off');
         else
@@ -419,7 +437,8 @@ function getInfoBar(establishmentId) {
 }
 
 function updateAprobacion(flag) {
-    firebase.database().ref('establishment/bares/' + establishmentObject.id + "/requestApproved").set(flag)
+    console.log(establishmentObject.id);
+    firebase.database().ref('establishment/bares/' + establishment + "/requestApproved").set(flag)
         .then(function (result) {
             console.log("Función aprobación actualizada")
         }).catch(function (error) {
@@ -433,8 +452,8 @@ function verificarRegistro(establishmentId){
         var obj = JSON.parse(establishment);
         console.log("Buscando Registro ");
         if (obj != null)
-            establishmentObject = obj;
-        if(establishmentObject.value === undefined || establishmentObject.value === false){
+            establishmentRegistry = obj;
+        if(establishmentRegistry.value === undefined || establishmentRegistry.value === false){
             $('#registro').show();
             console.log("Registro Incompleto");
         }

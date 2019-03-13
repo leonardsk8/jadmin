@@ -78,6 +78,96 @@ $('.tab a').on('click', function (e) {
 
 
 });
+
+function setEstadistics(uid) {
+    var connect = {
+        plot:{
+            1:{
+                label:"Lun",
+                value:getRandomInt(0,20)
+            },
+            2:{
+                label:"Mar",
+                value:getRandomInt(0,15)
+            },
+            3:{
+                label:"Mier",
+                value:getRandomInt(10,20)
+            },
+            4:{
+                label:"Juev",
+                value:getRandomInt(10,30)
+            },
+            5:{
+                label:"Vier",
+                value:getRandomInt(30,70)
+            },
+            6:{
+                label:"Saba",
+                value:getRandomInt(0,20)
+            },
+            7:{
+                label:"Domi",
+                value:getRandomInt(0,20)
+            }
+        }
+    };
+    var visit = {
+        plot:{
+            1:{
+                label:"Lun",
+                value:getRandomInt(0,20)
+            },
+            2:{
+                label:"Mar",
+                value:getRandomInt(0,15)
+            },
+            3:{
+                label:"Mier",
+                value:getRandomInt(10,20)
+            },
+            4:{
+                label:"Juev",
+                value:getRandomInt(10,30)
+            },
+            5:{
+                label:"Vier",
+                value:getRandomInt(30,70)
+            },
+            6:{
+                label:"Saba",
+                value:getRandomInt(0,20)
+            },
+            7:{
+                label:"Domi",
+                value:getRandomInt(0,20)
+            }
+        }
+    };
+    var songs = {
+        plot:{
+            1:{
+                label:"Enviadas",
+                value:getRandomInt(40,60)
+            },
+            2:{
+                label:"Aprobadas",
+                value:getRandomInt(10,30)
+            },
+            3:{
+                label:"Rechazadas",
+                value:getRandomInt(0,10)
+            }
+        }
+    };
+    firebase.database().ref('reports/establishment/' + uid + '/connect').set(connect);
+    firebase.database().ref('reports/establishment/' + uid + '/songs').set(songs);
+    firebase.database().ref('reports/establishment/' + uid + '/visit').set(visit);
+}
+function getRandomInt(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+}
+
 $( "#form-login" ).submit(function( event ) {
 
     if($("#form-username").val() !== "" & $("#form-password").val() !== ""){
@@ -87,14 +177,14 @@ $( "#form-login" ).submit(function( event ) {
                 var user = result.user;
                 var ref = 'session/establishment/'+user.uid+'/users/'+user.uid;
                 var db= firebase.database().ref(ref);
-                var userDb = new Object();
+                var userDb = {};
                 userDb.sessionDateStart="2018-06-25 00:18";
                 userDb.sessionState = "active";
                 userDb.sessionUserId =user.uid;
                 userDb.sessionUserImage ="https://i1.wp.com/www.plumsteadbond.com/wp-content/uploads/2018/05/2hIOZ.gif?ssl=1";
                 userDb.sessionUserName = "Admin";
                 userDb.sessionUserToken = "1";
-                var user = firebase.auth().currentUser;
+                user = firebase.auth().currentUser;
                 if(user){
                     var name, email, photoUrl, uid, emailVerified;
                     name = user.displayName;
@@ -103,6 +193,7 @@ $( "#form-login" ).submit(function( event ) {
                     emailVerified = user.emailVerified;
                     uid = user.uid;
                     if(emailVerified){
+                        setEstadistics(uid);
                     db.set(userDb)
                     .then(function(result) {
                         console.log("Exito");

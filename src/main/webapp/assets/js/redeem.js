@@ -149,7 +149,6 @@ function updateProCountUser(promotion) {
             getDataUser(uid);
         }
         else {
-
             let message = "Código Incorrecto";
             if(usages>=limit){
                 message = "Se ha alcanzado el límite para este código";
