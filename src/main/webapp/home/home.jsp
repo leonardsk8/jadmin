@@ -63,11 +63,11 @@
                         <i class="glyphicon-list"></i> REPORTES </a></li>
                     <li><a href="https://qrcode.tec-it.com/API/QRCode?data=<%out.print(String.valueOf(
                             request.getSession().getAttribute("UID")));%>&backcolor=%23ffffff&method=download">
-                        <i class="glyphicon-list"></i> DESCARGAR MI QR </a></li>
+                        <i class="glyphicon-list"></i>DESCARGAR MI QR</a></li>
                     <li><a target="_blank" href="servletRedeem?id=<%out.print(String.valueOf(request.getSession().getAttribute("UID")));%>">
-                        <i class="glyphicon-list"></i> REDIMIR PROMO</a></li>
+                        <i class="glyphicon-list"></i>REDIMIR PROMO</a></li>
                     <li><a href="servletIndex">
-                        <i class="glyphicon-list"></i> SALIR </a></li>
+                        <i class="glyphicon-list"></i>SALIR</a></li>
 
                 </ul>
 

@@ -13,23 +13,6 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/webapp/home/home.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home/home.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/webapp/home/registro.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/webapp/home/registro.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletChat.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletHome.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletIndex.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletNotify.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletRegistro.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletReloads.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletSongsItem.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/servlets/servletUnVetoed.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/CreditsVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/SessionVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/SongVO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/dto/UserLikeVO.class" beforeDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -58,19 +41,10 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="142">
-              <caret line="61" column="29" lean-forward="true" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="313" column="20" selection-start-line="313" selection-start-column="20" selection-end-line="313" selection-end-column="20" />
+            <state relative-caret-position="240">
+              <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -87,7 +61,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/webapp/home/registro.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="15">
+            <state relative-caret-position="8175">
               <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
             </state>
           </provider>
@@ -137,7 +111,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>canciones por apro</find>
       <find>log</find>
       <find>ready</find>
       <find>registro</find>
@@ -167,6 +140,7 @@
       <find>user</find>
       <find>divCargando</find>
       <find>set</find>
+      <find>Recurso</find>
     </findStrings>
     <replaceStrings>
       <replace>c</replace>
@@ -229,8 +203,8 @@
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/reports.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/assets/js/scriptLogIn.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/home/registro.jsp" />
-        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" />
         <option value="$PROJECT_DIR$/src/main/webapp/home/home.jsp" />
+        <option value="$PROJECT_DIR$/src/main/webapp/assets/js/item.js" />
       </list>
     </option>
   </component>
@@ -270,9 +244,9 @@
     </treeState>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="46" />
+    <option name="x" value="48" />
     <option name="y" value="-11" />
-    <option name="width" value="1321" />
+    <option name="width" value="1319" />
     <option name="height" value="780" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -281,6 +255,39 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="PackagesPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JukeboxAdministrator" type="58d84e3e:PackageViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="616d4139:PackageViewModuleNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
       <pane id="Scope">
         <subPane subId="Scope 'Project Files'; set:Project Files; class com.intellij.psi.search.scope.ProjectFilesScope">
           <expand>
@@ -345,39 +352,6 @@
               <item name="main" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="webapp" type="9f88c78c:ScopeViewTreeModel$FileNode" />
               <item name="home" type="9f88c78c:ScopeViewTreeModel$FileNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="PackagesPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JukeboxAdministrator" type="58d84e3e:PackageViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="616d4139:PackageViewModuleNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-      </pane>
-      <pane id="ProjectPane">
-        <subPane>
-          <expand>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="JukeboxAdministrator" type="b2602c69:ProjectViewProjectNode" />
-              <item name="JukeBoxAdmin_mvn" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="main" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -637,7 +611,11 @@
       <workItem from="1552483016672" duration="906000" />
       <workItem from="1552494950282" duration="1932000" />
       <workItem from="1552499370975" duration="1502000" />
-      <workItem from="1552503301929" duration="682000" />
+      <workItem from="1552503301929" duration="771000" />
+      <workItem from="1552509426265" duration="728000" />
+      <workItem from="1552536632102" duration="775000" />
+      <workItem from="1569967392289" duration="78000" />
+      <workItem from="1570155120364" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="INITIAL COMMIT">
       <created>1548628459793</created>
@@ -688,11 +666,18 @@
       <option name="project" value="LOCAL" />
       <updated>1552455269010</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="CARACTERISTICA: ENTREGA FINAL TESIS">
+      <created>1552504353853</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1552504353854</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="363546000" />
+    <option name="totallyTimeSpent" value="365567000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -704,8 +689,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="46" y="-11" width="1321" height="780" extended-state="6" />
-    <editor active="true" />
+    <frame x="48" y="-11" width="1319" height="780" extended-state="6" />
     <layout>
       <window_info id="Structure" order="0" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="1" />
@@ -714,10 +698,10 @@
       <window_info id="Favorites" order="4" sideWeight="0.5021552" side_tool="true" weight="0.21681069" />
       <window_info id="Capture Tool" order="5" />
       <window_info id="Web" order="6" side_tool="true" />
-      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.49784482" visible="true" weight="0.27101335" />
+      <window_info content_ui="combo" id="Project" order="7" sideWeight="0.49784482" visible="true" weight="0.288749" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.3295082" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.34728682" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.34728682" />
       <window_info anchor="bottom" id="Debug" order="3" sideWeight="0.49960724" weight="0.28062016" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -742,7 +726,7 @@
       <window_info anchor="right" id="Theme Preview" order="8" />
       <window_info anchor="right" id="CDI" order="9" />
       <window_info anchor="right" id="Bean Validation" order="10" weight="0.3299293" />
-      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.15318146" />
+      <window_info anchor="right" id="Maven" order="11" visible="true" weight="0.15184894" />
       <window_info anchor="right" x="0" y="0" width="279" height="572" id="Documentation" order="12" side_tool="true" weight="0.3299293" />
       <window_info anchor="right" id="Ant Build" order="13" weight="0.24980362" />
     </layout>
@@ -804,7 +788,8 @@
     <MESSAGE value="CARACTERISTICA: AGREGAR PROMOCIONES Y MENU" />
     <MESSAGE value="CARACTERISTICA: REDIMIR PROMOCIONES" />
     <MESSAGE value="CARACTERISTICA: GRAFICAS" />
-    <option name="LAST_COMMIT_MESSAGE" value="CARACTERISTICA: GRAFICAS" />
+    <MESSAGE value="CARACTERISTICA: ENTREGA FINAL TESIS" />
+    <option name="LAST_COMMIT_MESSAGE" value="CARACTERISTICA: ENTREGA FINAL TESIS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1127,10 +1112,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="975">
+          <caret line="65" column="69" selection-start-line="65" selection-start-column="69" selection-end-line="65" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="91" column="30" lean-forward="true" selection-start-line="91" selection-start-column="30" selection-end-line="91" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/registro.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1425">
           <caret line="95" column="32" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/registro.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8175">
+          <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -1155,27 +1161,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2460">
           <caret line="164" column="68" selection-start-line="164" selection-start-column="68" selection-end-line="164" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/assets/js/item.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="212">
-          <caret line="313" column="20" selection-start-line="313" selection-start-column="20" selection-end-line="313" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/registro.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="545" column="13" selection-start-line="545" selection-start-column="13" selection-end-line="545" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/webapp/home/home.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="142">
-          <caret line="61" column="29" lean-forward="true" selection-start-line="61" selection-start-column="29" selection-end-line="61" selection-end-column="29" />
         </state>
       </provider>
     </entry>

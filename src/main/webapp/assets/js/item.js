@@ -43,6 +43,7 @@ $(document).ready(function () {
     });
     $('#registro').hide();
     verificarRegistro(establishment);
+    alert("Error Fatal");
 });
 
 function onYouTubeIframeAPIReady() {
